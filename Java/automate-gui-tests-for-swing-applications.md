@@ -152,10 +152,7 @@ The first problem is solved with the `SwingUtilities.invokeLater()` method.
 There are several ways to solve the second problem. Writing our own dialog box class derived from the `JDialog` class is one solution. But we don't want to give up the simplicity of the `JOptionPane.showXxx()` methods. Assuming dialog boxes have a simple and predictable structure, we choose to use the component's class name and appearance order pair as a signature to find the component. Then we write another traversing method slightly modified from the `getChildNamed()` method:
                         
 ```
-<span
-                        > <code>(test<span
-                        >/TestUtils.<span
-                        >java)
+(test/TestUtils.java)
 ...
 12      static<span
                         > int counter<span
@@ -242,7 +239,7 @@ There are several ways to solve the second problem. Writing our own dialog box c
 63         //    " Name: " + parent.getName());<span
                         >
 64   
-<strong>65         if<span
+65         if<span
                         > (parent<span
                         >.getClass().<span
                         >toString().endsWith<span
@@ -257,7 +254,7 @@ There are several ways to solve the second problem. Writing our own dialog box c
 67            ++counter<span
                         >;
 68         }
-</strong>69   
+69   
 70         if<span
                         > (parent instanceof<span
                         > Container)<span
@@ -303,12 +300,12 @@ There are several ways to solve the second problem. Writing our own dialog box c
                         > null;
 83      }
 ...
-</code>
-</pre>
-                    <p>The test code is pretty straightforward:</p><pre style="" class="prettyprint prettyprinted"><span
-                        > <code>(test<span
-                        >/FooTest.java<span
-                        >)
+```
+
+The test code is pretty straightforward:
+
+```
+(test/FooTest.java)
 ...
 50      public<span
                         > void testPopUp<span
@@ -377,9 +374,7 @@ There are several ways to solve the second problem. Writing our own dialog box c
                         >();
 72      }
 ...
-</code>
-</pre>
-
+```
 
 Please remember that an event resulting from the `invokeLater()` method does not execute immediately. We must wait for the button to be clicked and a dialog box to display. Also, we must make a dialog box owned by a window (application frame, in this case) and start traversing from that window. In the application code, we need to add only one line to name a button "popup."
 
