@@ -55,7 +55,7 @@ My team chose the third method and used <em>name</em> as a component's signature
 
 Now let's test the code. The following snippet is the relevant part of the unit-test code. Simple enough, isn't it?
 
-```
+```java
 (test/FooTest.java)
 ...
 14   public class FooTest extends TestCase {
@@ -81,7 +81,7 @@ Now let's test the code. The following snippet is the relevant part of the unit-
 
 Component traversal is encapsulated into a utility class, `TestUtils`. The `TestUtils.getChildNamed()` static method looks for a Swing component named `input`, starting from the application's `JFrame` class (or from any `Component` object in the Swing tree structure):
 
-```
+```java
 (test/TestUtils.java)
 ...
 14      public static Component getChildNamed(Component parent, String name) {
@@ -108,7 +108,7 @@ Component traversal is encapsulated into a utility class, `TestUtils`. The `Test
 
 Only a single line should be added to the application code:
 
-```
+```java
 (Foo.java)
 ...
 66         // Test input field, add "?" to the text when ENTER is hit.
@@ -128,7 +128,7 @@ Only a single line should be added to the application code:
 
 For menu items, the application code and test code are similar. But a small change is necessary in the `TestUtils.getChildNamed()` method to access a menu item, which is not realized until it is dropped down:
 
-```
+```java
 (test/TestUtils.java)
 ...
 14      public static Component getChildNamed(Component parent, String name) {
@@ -150,8 +150,8 @@ The hardest problem is the modal dialog box. When we create a dialog box with th
 The first problem is solved with the `SwingUtilities.invokeLater()` method.
 
 There are several ways to solve the second problem. Writing our own dialog box class derived from the `JDialog` class is one solution. But we don't want to give up the simplicity of the `JOptionPane.showXxx()` methods. Assuming dialog boxes have a simple and predictable structure, we choose to use the component's class name and appearance order pair as a signature to find the component. Then we write another traversing method slightly modified from the `getChildNamed()` method:
-                        
-```
+
+```java
 (test/TestUtils.java)
 ...
 12      static int counter;
@@ -209,7 +209,7 @@ There are several ways to solve the second problem. Writing our own dialog box c
 
 The test code is pretty straightforward:
 
-```
+```java
 (test/FooTest.java)
 ...
 50      public void testPopUp() throws Exception {
@@ -244,7 +244,7 @@ Please remember that an event resulting from the `invokeLater()` method does not
 
 So far, we have tested components in a Swing application for unit tests only. But, if you concatenate the contents of these unit tests in a particular order, you get an acceptance test for a single story. Here is an example.
 
-```
+```java
 (test/FooTest.java)
 ...
 74      public void testStory() throws Exception {
