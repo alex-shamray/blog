@@ -104,86 +104,40 @@ Component traversal is encapsulated into a utility class, `TestUtils`. The `Test
 33         return null;
 34      }
 ...
-</code>
 ```
 
 Only a single line should be added to the application code:
 
 ```
-<pre style=""
-                                                                                           class="prettyprint prettyprinted"><span
-                        > <code>(Foo<span
-                        >.java)
+(Foo.java)
 ...
-66         <span class="com">// Test input field, add "?" to the text when ENTER is hit.<span
-                        >
-67         <span class="com">// inputField is a instance variable<span
-                        >
-68         inputField =<span
-                        > new JTextField<span
-                        >(20);
-69         inputField.<span
-                        >addActionListener(new<span
-                        > ActionListener()<span
-                        > {
-70            public<span
-                        > void actionPerformed<span
-                        >(ActionEvent <span
-                        >event) <span
-                        >{
-71               inputField.<span
-                        >setText(inputField<span
-                        >.getText()<span
-                        > + <span
-                        >"?");
+66         // Test input field, add "?" to the text when ENTER is hit.
+67         // inputField is a instance variable
+68         inputField = new JTextField(20);
+69         inputField.addActionListener(new ActionListener() {
+70            public void actionPerformed(ActionEvent event) {
+71               inputField.setText(inputField.getText() + "?");
 72            }
 73         });
-<strong>74         inputField.<span
-                        >setName("input"<span
-                        >);
-</strong>75         getContentPane<span
-                        >().add(inputField<span
-                        >);
+74         inputField.setName("input");
+75         getContentPane().add(inputField);
 ...
-</code>
 ```
-
 
 ### A trick for menu items
 
 For menu items, the application code and test code are similar. But a small change is necessary in the `TestUtils.getChildNamed()` method to access a menu item, which is not realized until it is dropped down:
-                        
-                        <pre style="" class="prettyprint prettyprinted"><span
-                        > <code>(test<span
-                        >/TestUtils.<span
-                        >java)
+
+```
+(test/TestUtils.java)
 ...
-14      public<span
-                        > static Component<span
-                        > getChildNamed(<span
-                        >Component parent,<span
-                        > String name<span
-                        >) {
+14      public static Component getChildNamed(Component parent, String name) {
 ...
-22         if<span
-                        > (parent instanceof<span
-                        > Container)<span
-                        > {
-<strong>23            Component<span
-                        >[] children =<span
-                        > (parent instanceof<span
-                        > JMenu)<span
-                        > ?
-24                  ((<span
-                        >JMenu)parent<span
-                        >).getMenuComponents()<span
-                        > :
-25                  ((<span
-                        >Container)parent<span
-                        >).getComponents();<span
-                        >
-</strong>...
-</code>
+22         if (parent instanceof Container) {
+23            Component[] children = (parent instanceof JMenu) ?
+24                  ((JMenu)parent).getMenuComponents() :
+25                  ((Container)parent).getComponents();
+...
 ```
 
 ### Modal dialog box
@@ -218,7 +172,7 @@ There are several ways to solve the second problem. Writing our own dialog box c
 <strong>38         counter =<span
                         > 0;
 </strong>39   
-40         <span class="com">// Step in only owned windows and ignore its components in JFrame<span
+40         // Step in only owned windows and ignore its components in JFrame<span
                         >
 41         if<span
                         > (parent instanceof<span
@@ -239,7 +193,7 @@ There are several ways to solve the second problem. Writing our own dialog box c
                         >i) <span
                         >{
 45               <span
-                        class="com">// Take only active windows
+                        >// Take only active windows
 46               if<span
                         > (children<span
                         >[i]<span
@@ -281,11 +235,11 @@ There are several ways to solve the second problem. Writing our own dialog box c
                         > index) <span
                         >{
 60   
-61         <span class="com">// Debug line<span
+61         // Debug line<span
                         >
-62         <span class="com">//System.out.println("Class: " + parent.getClass() +<span
+62         //System.out.println("Class: " + parent.getClass() +<span
                         >
-63         <span class="com">//    " Name: " + parent.getName());<span
+63         //    " Name: " + parent.getName());<span
                         >
 64   
 <strong>65         if<span
@@ -387,7 +341,7 @@ There are several ways to solve the second problem. Writing our own dialog box c
                         >= null<span
                         >;
 61   
-62         <span class="com">// The dialog box will show up shortly<span
+62         // The dialog box will show up shortly<span
                         >
 63         for<span
                         > (int<span
@@ -444,7 +398,7 @@ So far, we have tested components in a Swing application for unit tests only. Bu
                         >() throws<span
                         > Exception <span
                         >{
-75         <span class="com">// Type a string, change the color and popup<span
+75         // Type a string, change the color and popup<span
                         >
 76   
 77         String testString <span
@@ -527,7 +481,7 @@ So far, we have tested components in a Swing application for unit tests only. Bu
                         >= null<span
                         >;
 103  
-104        <span class="com">// The dialog box will show up shortly<span
+104        // The dialog box will show up shortly<span
                         >
 105        for<span
                         > (int<span
@@ -579,33 +533,3 @@ So far, we have tested components in a Swing application for unit tests only. Bu
 ...
 </code>
 ```
-
-                </div>
-
-
-                <section class="pagination">
-	
-    
-   		
-	    <span class="page-numbers">
-		    
-		    	<a href="http://www.javaworld.com/article/2073056/swing-gui-programming/automate-gui-tests-for-swing-applications.html"
-                   class="page-link current">1</a>
-		    
-		    	<a href="http://www.javaworld.com/article/2073056/swing-gui-programming/automate-gui-tests-for-swing-applications.html?page=2"
-                   class="page-link ">2</a>
-		    
-	    
-	    <span class="current-page">
-	    	Page 
-	    
-
-
-                    <a href="http://www.javaworld.com/article/2073056/swing-gui-programming/automate-gui-tests-for-swing-applications.html?page=2"
-                       class="page-link next" rel="next">Next <i class="ss-icon ss-navigateright"></i></a>
-
-                </section>
-
-
-            </section>
-            <!-- /.bodee -->
