@@ -154,150 +154,55 @@ There are several ways to solve the second problem. Writing our own dialog box c
 ```
 (test/TestUtils.java)
 ...
-12      static<span
-                        > int counter<span
-                        >;
+12      static int counter;
 ...
-36      public<span
-                        > static Component<span
-                        > getChildIndexed(
-37            Component<span
-                        > parent, String<span
-                        > klass, int<span
-                        > index) <span
-                        >{
-<strong>38         counter =<span
-                        > 0;
-</strong>39   
-40         // Step in only owned windows and ignore its components in JFrame<span
-                        >
-41         if<span
-                        > (parent instanceof<span
-                        > Window)<span
-                        > {
-<strong>42            Component<span
-                        >[] children =<span
-                        > ((Window)<span
-                        >parent).<span
-                        >getOwnedWindows();
-</strong>43   
-44            for<span
-                        > (int<span
-                        > i = <span
-                        >0; i <span
-                        >&lt; children.<span
-                        >length; ++<span
-                        >i) <span
-                        >{
-45               <span
-                        >// Take only active windows
-46               if<span
-                        > (children<span
-                        >[i]<span
-                        > instanceof <span
-                        >Window &amp;&amp;<span
-                        >
-47                     !((<span
-                        >Window)children<span
-                        >[i]).isActive<span
-                        >()) {<span
-                        > continue;<span
-                        > }
+36      public static Component getChildIndexed(
+37            Component parent, String klass, int index) {
+38         counter = 0;
+39   
+40         // Step in only owned windows and ignore its components in JFrame
+41         if (parent instanceof Window) {
+42            Component[] children = ((Window)parent).getOwnedWindows();
+43   
+44            for (int i = 0; i < children.length; ++i) {
+45               // Take only active windows
+46               if (children[i] instanceof Window &&
+47                     !((Window)children[i]).isActive()) { continue; }
 48   
-49               Component<span
-                        > child =<span
-                        > getChildIndexedInternal(
-50                     children[<span
-                        >i], klass,<span
-                        > index);
-51               if<span
-                        > (child !=<span
-                        > null)<span
-                        > { <span
-                        >return child;<span
-                        > }
+49               Component child = getChildIndexedInternal(
+50                     children[i], klass, index);
+51               if (child != null) { return child; }
 52            }
 53         }
 54   
-55         return<span
-                        > null;
+55         return null;
 56      }
 57   
-58      private<span
-                        > static Component<span
-                        > getChildIndexedInternal(
-59            Component<span
-                        > parent, String<span
-                        > klass, int<span
-                        > index) <span
-                        >{
+58      private static Component getChildIndexedInternal(
+59            Component parent, String klass, int index) {
 60   
-61         // Debug line<span
-                        >
-62         //System.out.println("Class: " + parent.getClass() +<span
-                        >
-63         //    " Name: " + parent.getName());<span
-                        >
+61         // Debug line
+62         //System.out.println("Class: " + parent.getClass() +
+63         //    " Name: " + parent.getName());
 64   
-65         if<span
-                        > (parent<span
-                        >.getClass().<span
-                        >toString().endsWith<span
-                        >(klass))<span
-                        > {
-66            if<span
-                        > (counter <span
-                        >== index)<span
-                        > { <span
-                        >return parent;<span
-                        > }
-67            ++counter<span
-                        >;
+65         if (parent.getClass().toString().endsWith(klass)) {
+66            if (counter == index) { return parent; }
+67            ++counter;
 68         }
 69   
-70         if<span
-                        > (parent instanceof<span
-                        > Container)<span
-                        > {
-71            Component<span
-                        >[] children =<span
-                        > (parent instanceof<span
-                        > JMenu)<span
-                        > ?
-72                  ((<span
-                        >JMenu)parent<span
-                        >).getMenuComponents()<span
-                        > :
-73                  ((<span
-                        >Container)parent<span
-                        >).getComponents();<span
-                        >
+70         if (parent instanceof Container) {
+71            Component[] children = (parent instanceof JMenu) ?
+72                  ((JMenu)parent).getMenuComponents() :
+73                  ((Container)parent).getComponents();
 74   
-75            for<span
-                        > (int<span
-                        > i = <span
-                        >0; i <span
-                        >&lt; children.<span
-                        >length; ++<span
-                        >i) <span
-                        >{
-76               Component<span
-                        > child =<span
-                        > getChildIndexedInternal(
-77                     children[<span
-                        >i], klass,<span
-                        > index);
-78               if<span
-                        > (child !=<span
-                        > null)<span
-                        > { <span
-                        >return child;<span
-                        > }
+75            for (int i = 0; i < children.length; ++i) {
+76               Component child = getChildIndexedInternal(
+77                     children[i], klass, index);
+78               if (child != null) { return child; }
 79            }
 80         }
 81         
-82         return<span
-                        > null;
+82         return null;
 83      }
 ...
 ```
@@ -307,71 +212,28 @@ The test code is pretty straightforward:
 ```
 (test/FooTest.java)
 ...
-50      public<span
-                        > void testPopUp<span
-                        >() throws<span
-                        > Exception <span
-                        >{
-51         final<span
-                        > JButton popup <span
-                        >= (JButton<span
-                        >)TestUtils.<span
-                        >getChildNamed(foo<span
-                        >, "popup");<span
-                        >
-52         assertNotNull(<span
-                        >popup);
+50      public void testPopUp() throws Exception {
+51         final JButton popup = (JButton)TestUtils.getChildNamed(foo, "popup");
+52         assertNotNull(popup);
 53   
-<strong>54         SwingUtilities<span
-                        >.invokeLater(<span
-                        >new Runnable<span
-                        >() {
-55            public<span
-                        > void run()<span
-                        > {
-56               popup.<span
-                        >doClick();
+54         SwingUtilities.invokeLater(new Runnable() {
+55            public void run() {
+56               popup.doClick();
 57            }
 58         });
-</strong>59   
-60         JButton ok <span
-                        >= null<span
-                        >;
+59   
+60         JButton ok = null;
 61   
-62         // The dialog box will show up shortly<span
-                        >
-63         for<span
-                        > (int<span
-                        > i = <span
-                        >0; ok <span
-                        >== null<span
-                        >; ++<span
-                        >i) <span
-                        >{
-64            Thread.<span
-                        >sleep(200);<span
-                        >
-65            ok =<span
-                        > (JButton)<span
-                        >TestUtils.<span
-                        >getChildIndexed(foo<span
-                        >, "JButton"<span
-                        >, 0<span
-                        >);
-66            assertTrue(<span
-                        >i &lt; <span
-                        >10);
+62         // The dialog box will show up shortly
+63         for (int i = 0; ok == null; ++i) {
+64            Thread.sleep(200);
+65            ok = (JButton)TestUtils.getChildIndexed(foo, "JButton", 0);
+66            assertTrue(i < 10);
 67         }
-68         assertEquals(<span
-                        >
-69               UIManager<span
-                        >.getString(<span
-                        >"OptionPane.okButtonText"),<span
-                        > ok.getText<span
-                        >());
+68         assertEquals(
+69               UIManager.getString("OptionPane.okButtonText"), ok.getText());
 70   
-71         ok.doClick<span
-                        >();
+71         ok.doClick();
 72      }
 ...
 ```
