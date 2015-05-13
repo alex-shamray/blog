@@ -388,148 +388,50 @@ Please remember that an event resulting from the `invokeLater()` method does not
 So far, we have tested components in a Swing application for unit tests only. But, if you concatenate the contents of these unit tests in a particular order, you get an acceptance test for a single story. Here is an example.
 
 ```
-<span
-                        > <code>(test<span
-                        >/FooTest.java<span
-                        >)
+(test/FooTest.java)
 ...
-74      public<span
-                        > void testStory<span
-                        >() throws<span
-                        > Exception <span
-                        >{
-75         // Type a string, change the color and popup<span
-                        >
+74      public void testStory() throws Exception {
+75         // Type a string, change the color and popup
 76   
-77         String testString <span
-                        >= "message2"<span
-                        >;
+77         String testString = "message2";
 78   
-79         JTextField<span
-                        >    input = <span
-                        >(JTextField)<span
-                        >TestUtils.<span
-                        >getChildNamed(foo<span
-                        >, "input");<span
-                        >
-80         JMenuItem     red   <span
-                        >= (JMenuItem<span
-                        >)TestUtils.<span
-                        >getChildNamed(foo<span
-                        >, "red"<span
-                        >);
-81         JMenuItem     blue  <span
-                        >= (JMenuItem<span
-                        >)TestUtils.<span
-                        >getChildNamed(foo<span
-                        >, "blue");<span
-                        >
-82         final<span
-                        > JButton popup <span
-                        >= (JButton<span
-                        >)TestUtils.<span
-                        >getChildNamed(foo<span
-                        >, "popup");<span
-                        >
+79         JTextField    input = (JTextField)TestUtils.getChildNamed(foo, "input");
+80         JMenuItem     red   = (JMenuItem)TestUtils.getChildNamed(foo, "red");
+81         JMenuItem     blue  = (JMenuItem)TestUtils.getChildNamed(foo, "blue");
+82         final JButton popup = (JButton)TestUtils.getChildNamed(foo, "popup");
 83   
-84         input.setText<span
-                        >(testString);<span
-                        >
-85         input.postActionEvent<span
-                        >();
+84         input.setText(testString);
+85         input.postActionEvent();
 86   
-87         red.doClick<span
-                        >();
-88         assertEquals(<span
-                        >testString + <span
-                        >"?", input<span
-                        >.getText());<span
-                        >
-89         assertEquals(<span
-                        >Color.red,<span
-                        > input.getForeground<span
-                        >());
+87         red.doClick();
+88         assertEquals(testString + "?", input.getText());
+89         assertEquals(Color.red, input.getForeground());
 90   
-91         blue.doClick<span
-                        >();
-92         assertEquals(<span
-                        >testString + <span
-                        >"?", input<span
-                        >.getText());<span
-                        >
-93         assertEquals(<span
-                        >Color.blue<span
-                        >, input.getForeground<span
-                        >());
+91         blue.doClick();
+92         assertEquals(testString + "?", input.getText());
+93         assertEquals(Color.blue, input.getForeground());
 94   
-95         SwingUtilities<span
-                        >.invokeLater(<span
-                        >new Runnable<span
-                        >() {
-96            public<span
-                        > void run()<span
-                        > {
-97               popup.<span
-                        >doClick();
+95         SwingUtilities.invokeLater(new Runnable() {
+96            public void run() {
+97               popup.doClick();
 98            }
 99         });
 100 
-101        JButton ok <span
-                        >= null<span
-                        >;
-102        JTextArea message <span
-                        >= null<span
-                        >;
+101        JButton ok = null;
+102        JTextArea message = null;
 103  
-104        // The dialog box will show up shortly<span
-                        >
-105        for<span
-                        > (int<span
-                        > i = <span
-                        >0; ok <span
-                        >== null<span
-                        > || message <span
-                        >== null<span
-                        >; ++<span
-                        >i) <span
-                        >{
-106           Thread.<span
-                        >sleep(200);<span
-                        >
-107           ok =<span
-                        > (JButton)<span
-                        >TestUtils.<span
-                        >getChildIndexed(foo<span
-                        >, "JButton"<span
-                        >, 0<span
-                        >);
-108           message =<span
-                        > (JTextArea<span
-                        >)TestUtils.<span
-                        >getChildIndexed(foo<span
-                        >, "JTextArea"<span
-                        >, 0<span
-                        >);
-109           assertTrue(<span
-                        >i &lt; <span
-                        >10);
+104        // The dialog box will show up shortly
+105        for (int i = 0; ok == null || message == null; ++i) {
+106           Thread.sleep(200);
+107           ok = (JButton)TestUtils.getChildIndexed(foo, "JButton", 0);
+108           message = (JTextArea)TestUtils.getChildIndexed(foo, "JTextArea", 0);
+109           assertTrue(i < 10);
 110        }
-111        assertEquals(<span
-                        >
-112              UIManager<span
-                        >.getString(<span
-                        >"OptionPane.okButtonText"),<span
-                        > ok.getText<span
-                        >());
-113        assertEquals(<span
-                        >testString + <span
-                        >"? ... done.", message<span
-                        >.getText());<span
-                        >
+111        assertEquals(
+112              UIManager.getString("OptionPane.okButtonText"), ok.getText());
+113        assertEquals(testString + "? ... done.", message.getText());
 114  
-115        ok.doClick<span
-                        >();
+115        ok.doClick();
 116     }
 ...
-</code>
 ```
