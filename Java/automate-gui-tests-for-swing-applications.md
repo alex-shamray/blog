@@ -13,11 +13,7 @@ We started with simple unit tests that solved some of our technical problems. To
 ### Sample application
 
 Let me explain what my team learned using a simple application, shown in Figure 1.
-                    <figure class="center"><img
-                            src="automate-gui-tests-for-swing-applications_files/jw-1115-swing1-100156585-orig.gif"
-                            height="73" width="297">
-                        <figcaption>Figure 1. Sample Swing application</figcaption>
-                    </figure>
+![Figure 1. Sample Swing application](jw-1115-swing1-100156585-orig.gif)
 
 The application has a text field. When a string is typed, it adds <code>?</code> to the end. When the Doit! button is clicked, a dialog box displays the text—see Figure 2.
                     <figure class="center"><img
