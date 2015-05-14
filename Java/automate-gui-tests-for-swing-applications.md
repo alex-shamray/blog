@@ -17,7 +17,7 @@ Let me explain what my team learned using a simple application, shown in Figure 
 ![Figure 1. Sample Swing application](jw-1115-swing1-100156585-orig.gif)
 *Figure 1. Sample Swing application*
 
-The application has a text field. When a string is typed, it adds <code>?</code> to the end. When the Doit! button is clicked, a dialog box displays the text—see Figure 2.
+The application has a text field. When a string is typed, it adds `?` to the end. When the Doit! button is clicked, a dialog box displays the text—see Figure 2.
 
 ![Figure 2. Modal dialog box when the button is clicked](jw-1115-swing2-100156586-orig.gif)
 *Figure 2. Modal dialog box when the button is clicked*
@@ -27,7 +27,7 @@ The application also has a menu for changing the text color (Figure 3).
 ![Figure 3. Menu items to change the input field text color](jw-1115-swing3-100156587-orig.gif)
 *Figure 3. Menu items to change the input field text color*
 
-Of course, according to XP's "test-first" rule, application code should not exist prior to the test code. But for this article's purpose, we start from this completed code and focus on the test code.</p>
+Of course, according to XP's "test-first" rule, application code should not exist prior to the test code. But for this article's purpose, we start from this completed code and focus on the test code.
 
 ### Access Swing components from test code
 
@@ -41,11 +41,11 @@ There are many ways to access Swing components:
 
 When choosing a method, two factors are important. One is simplicity and the other is independence between application and test code.
 
-The first method requires writing numerous lines of application code, especially when more and more components are involved in the test. If you change what will be tested, application code will also change. We better avoid this dependency.</p>
+The first method requires writing numerous lines of application code, especially when more and more components are involved in the test. If you change what will be tested, application code will also change. We better avoid this dependency.
 
-The second choice does not modify the target code at all. Application code is written as if no test exists. The standard Java library has a <code>java.awt.Robot</code> class for this purpose. But test code becomes awfully complicated. Just to click a button, we must specify the coordinate to which a pointer must move to perform the click. Every time the geometrical arrangement changes, the entire test code needs new parameters.</p>
+The second choice does not modify the target code at all. Application code is written as if no test exists. The standard Java library has a `java.awt.Robot` class for this purpose. But test code becomes awfully complicated. Just to click a button, we must specify the coordinate to which a pointer must move to perform the click. Every time the geometrical arrangement changes, the entire test code needs new parameters.
 
-My team chose the third method and used <em>name</em> as a component's signature. Naming a component is fairly simple—just a line with a `setName()` method. The modification in the application code is small. And the test code doesn't require complicated intelligence to find appropriate components selected by its class or location. The method is not fragile to changes in the target code. "Name" is receptive to changes unlike a component's absolute location, ordered number, or label string. What happens if the order of the test input field for first name and family name are exchanged? When specified with a "name," no change is necessary.
+My team chose the third method and used name as a component's signature. Naming a component is fairly simple—just a line with a `setName()` method. The modification in the application code is small. And the test code doesn't require complicated intelligence to find appropriate components selected by its class or location. The method is not fragile to changes in the target code. "Name" is receptive to changes unlike a component's absolute location, ordered number, or label string. What happens if the order of the test input field for first name and family name are exchanged? When specified with a "name," no change is necessary.
 
 Now let's test the code. The following snippet is the relevant part of the unit-test code. Simple enough, isn't it?
 
@@ -70,7 +70,6 @@ Now let's test the code. The following snippet is the relevant part of the unit-
 37         assertEquals(testString + "?", input.getText());
 38      }
 ...
-
 ```
 
 Component traversal is encapsulated into a utility class, `TestUtils`. The `TestUtils.getChildNamed()` static method looks for a Swing component named `input`, starting from the application's `JFrame` class (or from any `Component` object in the Swing tree structure):
