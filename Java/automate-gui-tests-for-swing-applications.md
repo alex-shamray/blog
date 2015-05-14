@@ -14,6 +14,7 @@ We started with simple unit tests that solved some of our technical problems. To
 
 Let me explain what my team learned using a simple application, shown in Figure 1.
 ![Figure 1. Sample Swing application](jw-1115-swing1-100156585-orig.gif)
+*Figure 1. Sample Swing application*
 
 The application has a text field. When a string is typed, it adds <code>?</code> to the end. When the Doit! button is clicked, a dialog box displays the text—see Figure 2.
                     <figure class="center"><img
