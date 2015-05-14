@@ -17,18 +17,12 @@ Let me explain what my team learned using a simple application, shown in Figure 
 *Figure 1. Sample Swing application*
 
 The application has a text field. When a string is typed, it adds <code>?</code> to the end. When the Doit! button is clicked, a dialog box displays the text—see Figure 2.
-                    <figure class="center"><img
-                            src="automate-gui-tests-for-swing-applications_files/jw-1115-swing2-100156586-orig.gif"
-                            height="98" width="298">
-                        <figcaption>Figure 2. Modal dialog box when the button is clicked</figcaption>
-                    </figure>
+![Figure 2. Modal dialog box when the button is clicked](jw-1115-swing2-100156586-orig.gif)
+*Figure 2. Modal dialog box when the button is clicked*
 
 The application also has a menu for changing the text color (Figure 3).
-                    <figure class="center"><img
-                            src="automate-gui-tests-for-swing-applications_files/jw-1115-swing3-100156587-orig.gif"
-                            height="95" width="302">
-                        <figcaption>Figure 3. Menu items to change the input field text color</figcaption>
-                    </figure>
+![Figure 3. Menu items to change the input field text color](jw-1115-swing3-100156587-orig.gif)
+*Figure 3. Menu items to change the input field text color*
 
 Of course, according to XP's "test-first" rule, application code should not exist prior to the test code. But for this article's purpose, we start from this completed code and focus on the test code.</p>
 
