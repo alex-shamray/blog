@@ -285,3 +285,14 @@ So far, we have tested components in a Swing application for unit tests only. Bu
 116     }
 ...
 ```
+
+### Summary
+
+A GUI application's acceptance test is not straightforward, but, in the case of Swing GUI applications, a small scaffolding utility can automate both unit and acceptance tests. There is no need to change the application code much, and no worry about injecting bugs. The advantage of automating acceptance tests is huge. You can ensure that the application works when operated by a human, plus, automating acceptance tests speeds up development.
+
+The source tree of this example, together with test code and utilities, is available for download from [Resources](#resources). Running "ant" in the top directory will build the example and run tests on it. When you use the `TestUtils` utility class with your own code, just put it in your test directory and use it from your JUnit test code.
+
+### [Learn more about this topic](resources)
+
+* [Download](jw-1115-swing.zip) the source code and Java documentation that accompanies this article
+* For more an JUnit, read "JUnit Best Practices," Andy Schneider (JavaWorld, December 2001) [http://www.javaworld.com/javaworld/jw-12-2000/jw-1221-junit.html](http://www.javaworld.com/javaworld/jw-12-2000/jw-1221-junit.html)
