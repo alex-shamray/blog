@@ -295,4 +295,5 @@ The source tree of this example, together with test code and utilities, is avail
 ### [Learn more about this topic](resources)
 
 * [Download](jw-1115-swing.zip) the source code and Java documentation that accompanies this article
-* For more an JUnit, read "JUnit Best Practices," Andy Schneider (JavaWorld, December 2001) [http://www.javaworld.com/javaworld/jw-12-2000/jw-1221-junit.html](http://www.javaworld.com/javaworld/jw-12-2000/jw-1221-junit.html)
+* For more an JUnit, read "JUnit Best Practices", Andy Schneider (JavaWorld, December 2001) [http://www.javaworld.com/javaworld/jw-12-2000/jw-1221-junit.html](http://www.javaworld.com/javaworld/jw-12-2000/jw-1221-junit.html)
+* "Automate GUI tests for Swing applications", Ichiro Suzuki (JavaWorld, November 15, 2004) [http://www.javaworld.com/article/2073056/swing-gui-programming/automate-gui-tests-for-swing-applications.html](http://www.javaworld.com/article/2073056/swing-gui-programming/automate-gui-tests-for-swing-applications.html)
