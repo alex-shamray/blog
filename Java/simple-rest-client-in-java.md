@@ -1,11 +1,11 @@
 <a
                             rel="v:url" property="v:title" class="crumbs-home" href="http://www.javacodegeeks.com/"><i
                             class="tieicon-home"></i>Home</a></span> » <span typeof="v:Breadcrumb"><a rel="v:url"
-                                                                                                      property="v:title"
-                                                                                                      href="http://www.javacodegeeks.com/category/java/">Java</a></span>
+                                              property="v:title"
+                                              href="http://www.javacodegeeks.com/category/java/">Java</a></span>
                         » <span typeof="v:Breadcrumb"><a rel="v:url" property="v:title"
-                                                         href="http://www.javacodegeeks.com/category/java/enterprise-java/">Enterprise
-                            Java</a></span> » <span class="current">Simple REST client in Java</span></div>
+ href="http://www.javacodegeeks.com/category/java/enterprise-java/">Enterprise
+                            Java</a></span> » <span class="current">Simple REST client in Java</span>
 
 
 # Simple REST client in Java
@@ -44,768 +44,79 @@ Here is the code for HTTP GET method:
 
 And for Post method; for sending simple string in post:
 
-                                    <div class="syntaxhighlighter  " id="highlighter_608448">
-                                        <div class="bar">
-                                            <div class="toolbar"><a class="item viewSource"
-                                                                    style="width: 16px; height: 16px;"
-                                                                    title="view source" href="#viewSource">view
-                                                source</a><a class="item printSource" style="width: 16px; height: 16px;"
-                                                             title="print" href="#printSource">print</a><a
-                                                    class="item about" style="width: 16px; height: 16px;" title="?"
-                                                    href="#about">?</a></div>
-                                        </div>
-                                        <div class="lines">
-                                            
-                                                
-                                                    
-                                                    
-                                                        01
-                                                        import <code
-                                                               >java.io.BufferedReader;
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        02
-                                                        import <code
-                                                               >java.io.IOException;
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        03
-                                                        import <code
-                                                               >java.io.InputStreamReader;
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        04
-                                                        import <code
-                                                               >org.apache.http.HttpResponse;
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        05
-                                                        import <code
-                                                               >org.apache.http.client.ClientProtocolException;
-                                                        
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        06
-                                                        import <code
-                                                               >org.apache.http.client.HttpClient;
-                                                        
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        07
-                                                        import <code
-                                                               >org.apache.http.client.methods.HttpPost;
-                                                        
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        08
-                                                        import <code
-                                                               >org.apache.http.entity.StringEntity;
-                                                        
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        09
-                                                        import <code
-                                                               >org.apache.http.impl.client.DefaultHttpClient;
-                                                        
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        10
-                                                        public <code
-                                                               >class Test
-                                                            {
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        11
-                                                        &nbsp;<code
-                                                               >public static
-                                                            void main(String[]
-                                                                args) throws <code
-                                                                   >ClientProtocolException, IOException
-                                                                {
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        12
-                                                        
-                                                            &nbsp;&nbsp;HttpClient client
-                                                            = new <code
-                                                               >DefaultHttpClient();
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        13
-                                                        
-                                                            &nbsp;&nbsp;HttpPost post
-                                                            = new <code
-                                                               >HttpPost(<code class="string">'<a
-                                                                href="http://resturl/">http://restUrl</a>'<code
-                                                               >);
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        14
-                                                        
-                                                            &nbsp;&nbsp;StringEntity input
-                                                            = new <code
-                                                               >StringEntity(<code class="string">'product'<code
-                                                               >);
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        15
-                                                        
-                                                            &nbsp;&nbsp;post.setEntity(input);
-                                                        
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        16
-                                                        
-                                                            &nbsp;&nbsp;HttpResponse response
-                                                            = client.execute(post);
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        17
-                                                        
-                                                            &nbsp;&nbsp;BufferedReader rd
-                                                            = new <code
-                                                               >BufferedReader(<code
-                                                               >new InputStreamReader(response.getEntity().getContent()));
-                                                        
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        18
-                                                        
-                                                            &nbsp;&nbsp;String line = <code
-                                                                class="string">'';
-                                                        
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        19
-                                                        
-                                                            &nbsp;&nbsp;while <code
-                                                               >((line = rd.readLine()) != <code
-                                                               >null)
-                                                            {
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        20
-                                                        
-                                                            &nbsp;&nbsp;&nbsp;System.out.println(line);
-                                                        
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        21
-                                                        
-                                                            &nbsp;&nbsp;}
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        22
-                                                        &nbsp;<code
-                                                               >}
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        23
-                                                        }
-                                                    
-                                                    
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
+```java
+01  import java.io.BufferedReader;
+02  import java.io.IOException;
+03  import java.io.InputStreamReader;
+04  import org.apache.http.HttpResponse;
+05  import org.apache.http.client.ClientProtocolException;
+06  import org.apache.http.client.HttpClient;
+07  import org.apache.http.client.methods.HttpPost;
+08  import org.apache.http.entity.StringEntity;
+09  import org.apache.http.impl.client.DefaultHttpClient;
+10  public class Test {
+11      public static void main(String[] args) throws ClientProtocolException, IOException {
+12          HttpClient client = new DefaultHttpClient();
+13          HttpPost post = new HttpPost('http://restUrl');
+14          StringEntity input = new StringEntity('product');
+15          post.setEntity(input);
+16          HttpResponse response = client.execute(post);
+17          BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+18          String line = '';
+19          while ((line = rd.readLine()) != null) {
+20              System.out.println(line);
+21          }
+22      }
+23  }
+```
 
 You can also send full [JSON](http://en.wikipedia.org/wiki/JSON) or [XML](http://en.wikipedia.org/wiki/XML) of a [POJO](http://en.wikipedia.org/wiki/Plain_Old_Java_Object) by putting String representing JSON or XML as a parameter of `StringEntity` and then set the input content type. Something like this:
 
-                                    <div class="syntaxhighlighter  " id="highlighter_664644">
-                                        <div class="bar">
-                                            <div class="toolbar"><a class="item viewSource"
-                                                                    style="width: 16px; height: 16px;"
-                                                                    title="view source" href="#viewSource">view
-                                                source</a><a class="item printSource" style="width: 16px; height: 16px;"
-                                                             title="print" href="#printSource">print</a><a
-                                                    class="item about" style="width: 16px; height: 16px;" title="?"
-                                                    href="#about">?</a></div>
-                                        </div>
-                                        <div class="lines">
-                                            
-                                                
-                                                    
-                                                    
-                                                        1
-                                                        StringEntity input
-                                                            = new <code
-                                                               >StringEntity(<code class="string">'{\'name1\':\'value1\',\'name2\':\'value2\'}'<code
-                                                               >); <code class="comments">//here
-                                                            instead of JSON you can also have XML
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        2
-                                                        <code
-                                                               >input.setContentType(<code
-                                                                class="string">'application/json'<code
-                                                               >);
-                                                    
-                                                    
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
+```java
+1   StringEntity input = new StringEntity('{\'name1\':\'value1\',\'name2\':\'value2\'}'); //here instead of JSON you can also have XML
+2   input.setContentType('application/json');
+```                                                    
 
 For JSON you can use JSONObject to create string representation of JSON.
 
-                                    <div class="syntaxhighlighter  " id="highlighter_35156">
-                                        <div class="bar">
-                                            <div class="toolbar"><a class="item viewSource"
-                                                                    style="width: 16px; height: 16px;"
-                                                                    title="view source" href="#viewSource">view
-                                                source</a><a class="item printSource" style="width: 16px; height: 16px;"
-                                                             title="print" href="#printSource">print</a><a
-                                                    class="item about" style="width: 16px; height: 16px;" title="?"
-                                                    href="#about">?</a></div>
-                                        </div>
-                                        <div class="lines">
-                                            
-                                                
-                                                    
-                                                    
-                                                        1
-                                                        JSONObject json
-                                                            = new <code
-                                                               >JSONObject();
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        2
-                                                        json.put(<code
-                                                                class="string">'name1'<code
-                                                               >, <code
-                                                                class="string">'value1'<code
-                                                               >);
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        3
-                                                        json.put(<code
-                                                                class="string">'name2'<code
-                                                               >, <code
-                                                                class="string">'value2'<code
-                                                               >);
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        4
-                                                        StringEntity se
-                                                            = new <code
-                                                               >StringEntity( json.toString());
-                                                        
-                                                    
-                                                    
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
+```java
+1   JSONObject json = new JSONObject();
+2   json.put('name1', 'value1');
+3   json.put('name2', 'value2');
+4   StringEntity se = new StringEntity( json.toString());
+```
 
 And for sending multiple parameter in post request:
 
-                                    <div class="syntaxhighlighter  " id="highlighter_175563">
-                                        <div class="bar">
-                                            <div class="toolbar"><a class="item viewSource"
-                                                                    style="width: 16px; height: 16px;"
-                                                                    title="view source" href="#viewSource">view
-                                                source</a><a class="item printSource" style="width: 16px; height: 16px;"
-                                                             title="print" href="#printSource">print</a><a
-                                                    class="item about" style="width: 16px; height: 16px;" title="?"
-                                                    href="#about">?</a></div>
-                                        </div>
-                                        <div class="lines">
-                                            
-                                                
-                                                    
-                                                    
-                                                        01
-                                                        import <code
-                                                               >java.io.BufferedReader;
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        02
-                                                        import <code
-                                                               >java.io.IOException;
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        03
-                                                        import <code
-                                                               >java.io.InputStreamReader;
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        04
-                                                        import <code
-                                                               >java.util.ArrayList;
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        05
-                                                        import <code
-                                                               >java.util.List;
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        06
-                                                        import <code
-                                                               >org.apache.http.HttpResponse;
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        07
-                                                        import <code
-                                                               >org.apache.http.client.ClientProtocolException;
-                                                        
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        08
-                                                        import <code
-                                                               >org.apache.http.client.HttpClient;
-                                                        
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        09
-                                                        import <code
-                                                               >org.apache.http.client.entity.UrlEncodedFormEntity;
-                                                        
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        10
-                                                        import <code
-                                                               >org.apache.http.client.methods.HttpPost;
-                                                        
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        11
-                                                        import <code
-                                                               >org.apache.http.impl.client.DefaultHttpClient;
-                                                        
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        12
-                                                        import <code
-                                                               >org.apache.http.message.BasicNameValuePair;
-                                                        
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        13
-                                                        public <code
-                                                               >class Test
-                                                            {
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        14
-                                                        &nbsp;<code
-                                                               >public static
-                                                            void main(String[]
-                                                                args) throws <code
-                                                                   >ClientProtocolException, IOException
-                                                                {
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        15
-                                                        
-                                                            &nbsp;&nbsp;HttpClient client
-                                                            = new <code
-                                                               >DefaultHttpClient();
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        16
-                                                        
-                                                            &nbsp;&nbsp;HttpPost post
-                                                            = new <code
-                                                               >HttpPost(<code class="string">'<a
-                                                                href="http://resturl/">http://restUrl</a>'<code
-                                                               >);
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        17
-                                                        
-                                                            &nbsp;&nbsp;List nameValuePairs
-                                                            = new <code
-                                                               >ArrayList(<code
-                                                                class="value">1);
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        18
-                                                        
-                                                            &nbsp;&nbsp;<code
-                                                               >nameValuePairs.add(<code
-                                                               >new BasicNameValuePair(<code
-                                                                class="string">'name'<code
-                                                               >, <code
-                                                                class="string">'value'<code
-                                                               >)); <code class="comments">//you
-                                                            can as many name value pair as you want in the list.
-                                                        
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        19
-                                                        
-                                                            &nbsp;&nbsp;<code
-                                                               >post.setEntity(<code
-                                                               >new UrlEncodedFormEntity(nameValuePairs));
-                                                        
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        20
-                                                        
-                                                            &nbsp;&nbsp;HttpResponse response
-                                                            = client.execute(post);
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        21
-                                                        
-                                                            &nbsp;&nbsp;BufferedReader rd
-                                                            = new <code
-                                                               >BufferedReader(<code
-                                                               >new InputStreamReader(response.getEntity().getContent()));
-                                                        
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        22
-                                                        
-                                                            &nbsp;&nbsp;String line = <code
-                                                                class="string">'';
-                                                        
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        23
-                                                        
-                                                            &nbsp;&nbsp;while <code
-                                                               >((line = rd.readLine()) != <code
-                                                               >null)
-                                                            {
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        24
-                                                        
-                                                            &nbsp;&nbsp;&nbsp;System.out.println(line);
-                                                        
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        25
-                                                        
-                                                            &nbsp;&nbsp;}
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        26
-                                                        &nbsp;<code
-                                                               >}
-                                                    
-                                                    
-                                                
-                                            </div>
-                                            
-                                                
-                                                    
-                                                    
-                                                        27
-                                                        }
-                                                    
-                                                    
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
+```java
+01  import java.io.BufferedReader;
+02  import java.io.IOException;
+03  import java.io.InputStreamReader;
+04  import java.util.ArrayList;
+05  import java.util.List;
+06  import org.apache.http.HttpResponse;
+07  import org.apache.http.client.ClientProtocolException;
+08  import org.apache.http.client.HttpClient;
+09  import org.apache.http.client.entity.UrlEncodedFormEntity;
+10  import org.apache.http.client.methods.HttpPost;
+11  import org.apache.http.impl.client.DefaultHttpClient;
+12  import org.apache.http.message.BasicNameValuePair;
+13  public class Test {
+14      public static void main(String[] args) throws ClientProtocolException, IOException {
+15          HttpClient client = new DefaultHttpClient();
+16          HttpPost post = new HttpPost('http://restUrl');
+17          List nameValuePairs = new ArrayList(1);
+18          nameValuePairs.add(new BasicNameValuePair('name', 'value'));  //you can as many name value pair as you want in the list.
+19          post.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+20          HttpResponse response = client.execute(post);
+21          BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+22          String line = '';
+23          while ((line = rd.readLine()) != null) {
+24              System.out.println(line);
+25          }
+26      }
+27  }
+```
 
 <strong>2. Using Jersey</strong>
 
@@ -814,253 +125,253 @@ And for sending multiple parameter in post request:
                                     <div class="syntaxhighlighter  " id="highlighter_554202">
                                         <div class="bar">
                                             <div class="toolbar"><a class="item viewSource"
-                                                                    style="width: 16px; height: 16px;"
-                                                                    title="view source" href="#viewSource">view
+            style="width: 16px; height: 16px;"
+            title="view source" href="#viewSource">view
                                                 source</a><a class="item printSource" style="width: 16px; height: 16px;"
-                                                             title="print" href="#printSource">print</a><a
+     title="print" href="#printSource">print</a><a
                                                     class="item about" style="width: 16px; height: 16px;" title="?"
-                                                    href="#about">?</a></div>
-                                        </div>
+                                                    href="#about">?</a>
+                                        
                                         <div class="lines">
                                             
                                                 
                                                     
                                                     
-                                                        01
-                                                        import <code
-                                                               >java.io.IOException;
+01
+import 
+java.io.IOException;
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        02
-                                                        import <code
-                                                               >javax.ws.rs.core.MediaType;
+02
+import 
+javax.ws.rs.core.MediaType;
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        03
-                                                        import <code
-                                                               >javax.ws.rs.core.UriBuilder;
+03
+import 
+javax.ws.rs.core.UriBuilder;
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        04
-                                                        import <code
-                                                               >org.apache.http.client.ClientProtocolException;
-                                                        
+04
+import 
+org.apache.http.client.ClientProtocolException;
+
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        05
-                                                        import <code
-                                                               >com.sun.jersey.api.client.Client;
-                                                        
+05
+import 
+com.sun.jersey.api.client.Client;
+
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        06
-                                                        import <code
-                                                               >com.sun.jersey.api.client.WebResource;
-                                                        
+06
+import 
+com.sun.jersey.api.client.WebResource;
+
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        07
-                                                        import <code
-                                                               >com.sun.jersey.api.client.config.ClientConfig;
-                                                        
+07
+import 
+com.sun.jersey.api.client.config.ClientConfig;
+
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        08
-                                                        import <code
-                                                               >com.sun.jersey.api.client.config.DefaultClientConfig;
-                                                        
+08
+import 
+com.sun.jersey.api.client.config.DefaultClientConfig;
+
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        09
-                                                        public <code
-                                                               >class Test
-                                                            {
+09
+public 
+class Test
+    {
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        10
-                                                        &nbsp;<code
-                                                               >public static
-                                                            void main(String[]
-                                                                args) throws <code
-                                                                   >ClientProtocolException, IOException
-                                                                {
+10
+&nbsp;
+public static
+    void main(String[]
+        args) throws 
+    ClientProtocolException, IOException
+        {
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        11
-                                                        
-                                                            &nbsp;&nbsp;ClientConfig config
-                                                            = new <code
-                                                               >DefaultClientConfig();
+11
+
+        ClientConfig config
+    = new 
+DefaultClientConfig();
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        12
-                                                        
-                                                            &nbsp;&nbsp;Client client =
-                                                            Client.create(config);
+12
+
+        Client client =
+    Client.create(config);
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        13
-                                                        
-                                                            &nbsp;&nbsp;WebResource service =
-                                                            client.resource(UriBuilder.fromUri(<code
-                                                                class="string">'<a
-                                                                href="http://resturl/">http://restUrl</a>'<code
-                                                               >).build());
+13
+
+        WebResource service =
+    client.resource(UriBuilder.fromUri(
+        class="string">'<a
+        href="http://resturl/">http://restUrl</a>'
+).build());
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        14
-                                                        
-                                                            &nbsp;&nbsp;<code class="comments">// getting XML
-                                                            data
+14
+
+         class="comments">// getting XML
+    data
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        15
-                                                        
-                                                            &nbsp;&nbsp;System.out.println(service.
-                                                            path(<code class="string">'restPath'<code
-                                                               >).path(<code class="string">'resourcePath'<code
-                                                               >).accept(MediaType.APPLICATION_JSON).get(String.<code
-                                                               >class<code
-                                                               >));
+15
+
+        System.out.println(service.
+    path( class="string">'restPath'
+).path( class="string">'resourcePath'
+).accept(MediaType.APPLICATION_JSON).get(String.
+class
+));
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        16
-                                                        
-                                                            &nbsp;&nbsp;<code class="comments">// getting JSON
-                                                            data
+16
+
+         class="comments">// getting JSON
+    data
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        17
-                                                        
-                                                            &nbsp;&nbsp;System.out.println(service.
-                                                            path(<code class="string">'restPath'<code
-                                                               >).path(<code class="string">'resourcePath'<code
-                                                               >).accept(MediaType.APPLICATION_XML).get(String.<code
-                                                               >class<code
-                                                               >));
+17
+
+        System.out.println(service.
+    path( class="string">'restPath'
+).path( class="string">'resourcePath'
+).accept(MediaType.APPLICATION_XML).get(String.
+class
+));
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        18
-                                                        &nbsp;<code
-                                                               >}
+18
+&nbsp;
+}
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        19
-                                                        }
+19
+}
                                                     
                                                     
                                                 
-                                            </div>
-                                        </div>
-                                    </div>
+                                            
+                                        
+                                    
 
 There are also other media formats in which you can get the response like PLAIN or HTML.
 
@@ -1069,365 +380,365 @@ And for HTTP POST method:
                                     <div class="syntaxhighlighter  " id="highlighter_532701">
                                         <div class="bar">
                                             <div class="toolbar"><a class="item viewSource"
-                                                                    style="width: 16px; height: 16px;"
-                                                                    title="view source" href="#viewSource">view
+            style="width: 16px; height: 16px;"
+            title="view source" href="#viewSource">view
                                                 source</a><a class="item printSource" style="width: 16px; height: 16px;"
-                                                             title="print" href="#printSource">print</a><a
+     title="print" href="#printSource">print</a><a
                                                     class="item about" style="width: 16px; height: 16px;" title="?"
-                                                    href="#about">?</a></div>
-                                        </div>
+                                                    href="#about">?</a>
+                                        
                                         <div class="lines">
                                             
                                                 
                                                     
                                                     
-                                                        01
-                                                        import <code
-                                                               >java.io.IOException;
+01
+import 
+java.io.IOException;
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        02
-                                                        import <code
-                                                               >javax.ws.rs.core.MediaType;
+02
+import 
+javax.ws.rs.core.MediaType;
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        03
-                                                        import <code
-                                                               >javax.ws.rs.core.MultivaluedMap;
-                                                        
+03
+import 
+javax.ws.rs.core.MultivaluedMap;
+
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        04
-                                                        import <code
-                                                               >javax.ws.rs.core.UriBuilder;
+04
+import 
+javax.ws.rs.core.UriBuilder;
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        05
-                                                        import <code
-                                                               >org.apache.http.client.ClientProtocolException;
-                                                        
+05
+import 
+org.apache.http.client.ClientProtocolException;
+
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        06
-                                                        import <code
-                                                               >com.sun.jersey.api.client.Client;
-                                                        
+06
+import 
+com.sun.jersey.api.client.Client;
+
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        07
-                                                        import <code
-                                                               >com.sun.jersey.api.client.ClientResponse;
-                                                        
+07
+import 
+com.sun.jersey.api.client.ClientResponse;
+
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        08
-                                                        import <code
-                                                               >com.sun.jersey.api.client.WebResource;
-                                                        
+08
+import 
+com.sun.jersey.api.client.WebResource;
+
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        09
-                                                        import <code
-                                                               >com.sun.jersey.api.client.config.ClientConfig;
-                                                        
+09
+import 
+com.sun.jersey.api.client.config.ClientConfig;
+
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        10
-                                                        import <code
-                                                               >com.sun.jersey.api.client.config.DefaultClientConfig;
-                                                        
+10
+import 
+com.sun.jersey.api.client.config.DefaultClientConfig;
+
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        11
-                                                        import <code
-                                                               >com.sun.jersey.core.util.MultivaluedMapImpl;
-                                                        
+11
+import 
+com.sun.jersey.core.util.MultivaluedMapImpl;
+
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        12
-                                                        public <code
-                                                               >class Test
-                                                            {
+12
+public 
+class Test
+    {
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        13
-                                                        &nbsp;<code
-                                                               >public static
-                                                            void main(String[]
-                                                                args) throws <code
-                                                                   >ClientProtocolException, IOException
-                                                                {
+13
+&nbsp;
+public static
+    void main(String[]
+        args) throws 
+    ClientProtocolException, IOException
+        {
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        14
-                                                        
-                                                            &nbsp;&nbsp;ClientConfig config
-                                                            = new <code
-                                                               >DefaultClientConfig();
+14
+
+        ClientConfig config
+    = new 
+DefaultClientConfig();
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        15
-                                                        
-                                                            &nbsp;&nbsp;Client client =
-                                                            Client.create(config);
+15
+
+        Client client =
+    Client.create(config);
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        16
-                                                        
-                                                            &nbsp;&nbsp;WebResource
-                                                            webResource =
-                                                            client.resource(UriBuilder.fromUri(<code
-                                                                class="string">'<a
-                                                                href="http://resturl/">http://restUrl</a>'<code
-                                                               >).build());
+16
+
+        WebResource
+    webResource =
+    client.resource(UriBuilder.fromUri(
+        class="string">'<a
+        href="http://resturl/">http://restUrl</a>'
+).build());
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        17
-                                                        
-                                                            &nbsp;&nbsp;MultivaluedMap
-                                                            formData = new <code
-                                                               >MultivaluedMapImpl();
+17
+
+        MultivaluedMap
+    formData = new 
+MultivaluedMapImpl();
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        18
-                                                        
-                                                            &nbsp;&nbsp;<code
-                                                               >formData.add(<code class="string">'name1'<code
-                                                               >, <code
-                                                                class="string">'val1'<code
-                                                               >);
+18
+
+        
+formData.add( class="string">'name1'
+, 
+        class="string">'val1'
+);
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        19
-                                                        
-                                                            &nbsp;&nbsp;<code
-                                                               >formData.add(<code class="string">'name2'<code
-                                                               >, <code
-                                                                class="string">'val2'<code
-                                                               >);
+19
+
+        
+formData.add( class="string">'name2'
+, 
+        class="string">'val2'
+);
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        20
-                                                        
-                                                            &nbsp;&nbsp;ClientResponse
-                                                            response =
-                                                            webResource.type(MediaType.APPLICATION_FORM_URLENCODED_TYPE).post(ClientResponse.<code
-                                                               >class,
-                                                            formData);
+20
+
+        ClientResponse
+    response =
+    webResource.type(MediaType.APPLICATION_FORM_URLENCODED_TYPE).post(ClientResponse.
+class,
+    formData);
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        21
-                                                        
-                                                            &nbsp;&nbsp;<code
-                                                               >System.out.println(<code
-                                                                class="string">'Response ' +
-                                                            response.getEntity(String.<code
-                                                               >class<code
-                                                               >));
+21
+
+        
+System.out.println(
+        class="string">'Response ' +
+    response.getEntity(String.
+class
+));
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        22
-                                                        &nbsp;<code
-                                                               >}
+22
+&nbsp;
+}
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        23
-                                                        }
+23
+}
                                                     
                                                     
                                                 
-                                            </div>
-                                        </div>
-                                    </div>
+                                            
+                                        
+                                    
 
 If you are using your POJO in the POST then you can do something like following:
 
                                     <div class="syntaxhighlighter  " id="highlighter_602305">
                                         <div class="bar">
                                             <div class="toolbar"><a class="item viewSource"
-                                                                    style="width: 16px; height: 16px;"
-                                                                    title="view source" href="#viewSource">view
+            style="width: 16px; height: 16px;"
+            title="view source" href="#viewSource">view
                                                 source</a><a class="item printSource" style="width: 16px; height: 16px;"
-                                                             title="print" href="#printSource">print</a><a
+     title="print" href="#printSource">print</a><a
                                                     class="item about" style="width: 16px; height: 16px;" title="?"
-                                                    href="#about">?</a></div>
-                                        </div>
+                                                    href="#about">?</a>
+                                        
                                         <div class="lines">
                                             
                                                 
                                                     
                                                     
-                                                        1
-                                                        ClientResponse response
-                                                            = webResource.path(<code
-                                                                class="string">'restPath').path(<code
-                                                                class="string">'resourcePath').
-                                                        
+1
+ClientResponse response
+    = webResource.path(
+        class="string">'restPath').path(
+        class="string">'resourcePath').
+
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        2
-                                                        type(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON).post(ClientResponse.<code
-                                                               >class,
-                                                            myPojo);
+2
+type(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON).post(ClientResponse.
+class,
+    myPojo);
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        3
-                                                        <code
-                                                               >System.out.println(<code
-                                                                class="string">'Response ' +
-                                                            response.getEntity(String.<code
-                                                               >class<code
-                                                               >));
+3
+
+System.out.println(
+        class="string">'Response ' +
+    response.getEntity(String.
+class
+));
                                                     
                                                     
                                                 
-                                            </div>
-                                        </div>
-                                    </div>
+                                            
+                                        
+                                    
 
 Here myPojo is an instance of custom POJO class.
 
@@ -1436,307 +747,307 @@ You can also use Form class from Jersey to submit multiple parameters in POST re
                                     <div class="syntaxhighlighter  " id="highlighter_243497">
                                         <div class="bar">
                                             <div class="toolbar"><a class="item viewSource"
-                                                                    style="width: 16px; height: 16px;"
-                                                                    title="view source" href="#viewSource">view
+            style="width: 16px; height: 16px;"
+            title="view source" href="#viewSource">view
                                                 source</a><a class="item printSource" style="width: 16px; height: 16px;"
-                                                             title="print" href="#printSource">print</a><a
+     title="print" href="#printSource">print</a><a
                                                     class="item about" style="width: 16px; height: 16px;" title="?"
-                                                    href="#about">?</a></div>
-                                        </div>
+                                                    href="#about">?</a>
+                                        
                                         <div class="lines">
                                             
                                                 
                                                     
                                                     
-                                                        01
-                                                        import <code
-                                                               >java.io.IOException;
+01
+import 
+java.io.IOException;
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        02
-                                                        import <code
-                                                               >javax.ws.rs.core.MediaType;
+02
+import 
+javax.ws.rs.core.MediaType;
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        03
-                                                        import <code
-                                                               >javax.ws.rs.core.UriBuilder;
+03
+import 
+javax.ws.rs.core.UriBuilder;
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        04
-                                                        import <code
-                                                               >org.apache.http.client.ClientProtocolException;
-                                                        
+04
+import 
+org.apache.http.client.ClientProtocolException;
+
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        05
-                                                        import <code
-                                                               >com.sun.jersey.api.client.Client;
-                                                        
+05
+import 
+com.sun.jersey.api.client.Client;
+
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        06
-                                                        import <code
-                                                               >com.sun.jersey.api.client.ClientResponse;
-                                                        
+06
+import 
+com.sun.jersey.api.client.ClientResponse;
+
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        07
-                                                        import <code
-                                                               >com.sun.jersey.api.client.WebResource;
-                                                        
+07
+import 
+com.sun.jersey.api.client.WebResource;
+
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        08
-                                                        import <code
-                                                               >com.sun.jersey.api.client.config.ClientConfig;
-                                                        
+08
+import 
+com.sun.jersey.api.client.config.ClientConfig;
+
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        09
-                                                        import <code
-                                                               >com.sun.jersey.api.client.config.DefaultClientConfig;
-                                                        
+09
+import 
+com.sun.jersey.api.client.config.DefaultClientConfig;
+
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        10
-                                                        import <code
-                                                               >com.sun.jersey.api.representation.Form;
-                                                        
+10
+import 
+com.sun.jersey.api.representation.Form;
+
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        11
-                                                        public <code
-                                                               >class Test
-                                                            {
+11
+public 
+class Test
+    {
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        12
-                                                        &nbsp;<code
-                                                               >public static
-                                                            void main(String[]
-                                                                args) throws <code
-                                                                   >ClientProtocolException, IOException
-                                                                {
+12
+&nbsp;
+public static
+    void main(String[]
+        args) throws 
+    ClientProtocolException, IOException
+        {
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        13
-                                                        
-                                                            &nbsp;&nbsp;ClientConfig config
-                                                            = new <code
-                                                               >DefaultClientConfig();
+13
+
+        ClientConfig config
+    = new 
+DefaultClientConfig();
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        14
-                                                        
-                                                            &nbsp;&nbsp;Client client =
-                                                            Client.create(config);
+14
+
+        Client client =
+    Client.create(config);
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        15
-                                                        
-                                                            &nbsp;&nbsp;WebResource service =
-                                                            client.resource(UriBuilder.fromUri(<code
-                                                                class="string">'<a
-                                                                href="http://resturl/">http://restUrl</a>'<code
-                                                               >).build());
+15
+
+        WebResource service =
+    client.resource(UriBuilder.fromUri(
+        class="string">'<a
+        href="http://resturl/">http://restUrl</a>'
+).build());
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        16
-                                                        
-                                                            &nbsp;&nbsp;Form form
-                                                            = new <code
-                                                               >Form();
+16
+
+        Form form
+    = new 
+Form();
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        17
-                                                        
-                                                            &nbsp;&nbsp;form.add(<code
-                                                                class="string">'name1'<code
-                                                               >, <code
-                                                                class="string">'value1'<code
-                                                               >);
+17
+
+        form.add(
+        class="string">'name1'
+, 
+        class="string">'value1'
+);
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        18
-                                                        
-                                                            &nbsp;&nbsp;form.add(<code
-                                                                class="string">'name2'<code
-                                                               >, <code
-                                                                class="string">'value1'<code
-                                                               >);
+18
+
+        form.add(
+        class="string">'name2'
+, 
+        class="string">'value1'
+);
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        19
-                                                        
-                                                            &nbsp;&nbsp;ClientResponse
-                                                            response = service.path(<code class="string">'restPath'<code
-                                                               >).path(<code class="string">'resourcePath'<code
-                                                               >).
+19
+
+        ClientResponse
+    response = service.path( class="string">'restPath'
+).path( class="string">'resourcePath'
+).
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        20
-                                                        
-                                                            &nbsp;&nbsp;type(MediaType.APPLICATION_FORM_URLENCODED).post(ClientResponse.<code
-                                                               >class,
-                                                            form);
+20
+
+        type(MediaType.APPLICATION_FORM_URLENCODED).post(ClientResponse.
+class,
+    form);
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        21
-                                                        
-                                                            &nbsp;&nbsp;<code
-                                                               >System.out.println(<code
-                                                                class="string">'Response ' +
-                                                            response.getEntity(String.<code
-                                                               >class<code
-                                                               >));
+21
+
+        
+System.out.println(
+        class="string">'Response ' +
+    response.getEntity(String.
+class
+));
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        22
-                                                        &nbsp;<code
-                                                               >}
+22
+&nbsp;
+}
                                                     
                                                     
                                                 
-                                            </div>
+                                            
                                             
                                                 
                                                     
                                                     
-                                                        23
-                                                        }
+23
+}
                                                     
                                                     
                                                 
-                                            </div>
-                                        </div>
-                                    </div>
+                                            
+                                        
+                                    
 
 Happy coding and don’t forget to share!
 
