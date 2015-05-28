@@ -1,13 +1,3 @@
-<a
-                            rel="v:url" property="v:title" class="crumbs-home" href="http://www.javacodegeeks.com/"><i
-                            class="tieicon-home"></i>Home</a></span> » <span typeof="v:Breadcrumb"><a rel="v:url"
-                                              property="v:title"
-                                              href="http://www.javacodegeeks.com/category/java/">Java</a></span>
-                        » <span typeof="v:Breadcrumb"><a rel="v:url" property="v:title"
- href="http://www.javacodegeeks.com/category/java/enterprise-java/">Enterprise
-                            Java</a></span> » <span class="current">Simple REST client in Java</span>
-
-
 # Simple REST client in Java
 
 Today most of the mobile applications that used to communicate to some server use [REST](http://en.wikipedia.org/wiki/Representational_state_transfer) services. These services are also common practice to use with JavaScript or jQuery. Right now I know 2 ways to create client for REST service in java and in this article I will try to demonstrate both the ways I know hoping that it will help someone in some way.
