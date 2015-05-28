@@ -12,7 +12,7 @@
 
 Today most of the mobile applications that used to communicate to some server use [REST](http://en.wikipedia.org/wiki/Representational_state_transfer) services. These services are also common practice to use with JavaScript or jQuery. Right now I know 2 ways to create client for REST service in java and in this article I will try to demonstrate both the ways I know hoping that it will help someone in some way.
 
-## 1. Using Apache HttpClient
+### 1. Using Apache HttpClient
 
 The Apache HttpClient library simplifies handling HTTP requests. To use this library you have to download the binaries with dependencies from [their website](http://hc.apache.org/httpclient-3.x).
 
@@ -118,7 +118,7 @@ And for sending multiple parameter in post request:
 27  }
 ```
 
-## 2. Using Jersey
+### 2. Using Jersey
 
 [Jersey](http://jersey.java.net/) is the reference implementation for [JSR-311](http://jcp.org/aboutJava/communityprocess/final/jsr311/index.html) specification, the specification of REST support in Java. Jersey contains basically a REST server and a REST client. it provides a library to communicate with the server producing REST services. For http get method:
 
