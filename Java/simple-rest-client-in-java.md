@@ -202,3 +202,7 @@ You can also use Form class from Jersey to submit multiple parameters in POST re
 ```
 
 Happy coding and don’t forget to share!
+
+#### Source
+
+[http://www.javacodegeeks.com/2012/09/simple-rest-client-in-java.html](http://www.javacodegeeks.com/2012/09/simple-rest-client-in-java.html)
