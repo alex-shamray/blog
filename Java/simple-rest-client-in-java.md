@@ -6,7 +6,6 @@ Today most of the mobile applications that used to communicate to some server us
 
 The Apache HttpClient library simplifies handling HTTP requests. To use this library you have to download the binaries with dependencies from [their website](http://hc.apache.org/httpclient-3.x).
 
-
 Here is the code for HTTP GET method:
 
 ```java
@@ -65,7 +64,7 @@ You can also send full [JSON](http://en.wikipedia.org/wiki/JSON) or [XML](http:/
 ```java
 1   StringEntity input = new StringEntity('{\'name1\':\'value1\',\'name2\':\'value2\'}'); //here instead of JSON you can also have XML
 2   input.setContentType('application/json');
-```                                                    
+```
 
 For JSON you can use JSONObject to create string representation of JSON.
 
@@ -96,7 +95,7 @@ And for sending multiple parameter in post request:
 15          HttpClient client = new DefaultHttpClient();
 16          HttpPost post = new HttpPost('http://restUrl');
 17          List nameValuePairs = new ArrayList(1);
-18          nameValuePairs.add(new BasicNameValuePair('name', 'value'));  //you can as many name value pair as you want in the list.
+18          nameValuePairs.add(new BasicNameValuePair('name', 'value')); //you can as many name value pair as you want in the list.
 19          post.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 20          HttpResponse response = client.execute(post);
 21          BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
@@ -112,7 +111,7 @@ And for sending multiple parameter in post request:
 
 [Jersey](http://jersey.java.net/) is the reference implementation for [JSR-311](http://jcp.org/aboutJava/communityprocess/final/jsr311/index.html) specification, the specification of REST support in Java. Jersey contains basically a REST server and a REST client. it provides a library to communicate with the server producing REST services. For http get method:
 
-```java                                                
+```java
 01  import java.io.IOException;
 02  import javax.ws.rs.core.MediaType;
 03  import javax.ws.rs.core.UriBuilder;
@@ -132,7 +131,7 @@ And for sending multiple parameter in post request:
 17          System.out.println(service.path('restPath').path('resourcePath').accept(MediaType.APPLICATION_XML).get(String.class));
 18      }
 19  }
-```                                                    
+```
 
 There are also other media formats in which you can get the response like PLAIN or HTML.
 
