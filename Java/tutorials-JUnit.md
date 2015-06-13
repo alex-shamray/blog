@@ -1,51 +1,14 @@
-<div class="article">
-    
-        <div>
-            <div>
-                ## <a name="d379189e1"></a>Unit Testing with JUnit - Tutorial
-                </h2>
-            </div>
-            <div>
-                <div class="author">
-                    <h3 class="author"><span class="firstname">Lars</span> <span class="surname">Vogel</span></h3>
-                </div>
-            </div>
-            <div>
-                <p class="releaseinfo">
+## Unit Testing with JUnit - Tutorial
 
-                </p>
+Version 2.8
 
-                <p>Version 2.8</p>
+08.06.2015
 
-                <p class="releaseinfo">
+**JUnit**
 
-                </p>
-            </div>
-            <div>
-                <p class="copyright">Copyright � 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015 vogella GmbH</p>
-            </div>
-            <div>
-                <p class="pubdate">08.06.2015</p>
-            </div>
-            <div>
-                <div class="abstract"><a name="abstract"></a>
+This tutorial explains unit testing with JUnit 4.x. It explains the creation of JUnit tests. It also covers the usage of the Eclipse IDE to work with JUnit tests.
 
-                    <p class="title"><b>JUnit</b></p>
-
-                    <p>
-                        This tutorial explains unit testing with JUnit
-                        4.x. It explains
-                        the creation of JUnit tests. It also covers the usage of the Eclipse IDE to work with JUnit
-                        tests.
-
-                    </p>
-                </div>
-            </div>
-        </div>
-        <hr>
-    </div>
-    <div class="toc">
-        <p><b>Table of Contents</b></p>
+**Table of Contents**
         <dl>
             <dt><span class="section"><a href="#unitintegrationperformancetests">1. Unit tests, integration tests and
                 performance tests</a></span></dt>
@@ -170,22 +133,8 @@
                 </dl>
             </dd>
         </dl>
-    </div>
 
-    
-        
-            <div>
-                <div>
-                    ## <a name="unitintegrationperformancetests"></a>1. Unit tests, integration
-                        tests and performance tests
-                    </h2>
-                </div>
-            </div>
-        </div>
-        
-            
-                <div>
-                    <div>
+## 1. Unit tests, integration tests and performance tests
 
 ### 1.1. Unit tests and unit testing
 
@@ -369,23 +318,10 @@ JUnit 4.x uses annotations to mark methods as test methods and to configure them
 **Table 1. Annotations**
 
 Annotation | Description
-                                <p>
-                                    @Test
-                                    <br>
-                                    public void method()
-
-                                </p>
-
-                            </td>
-                            <td align="left">
-                                The
-                                `@Test`
-                                annotation identifies a method as a test
-                                method.
-
-                            </td>
-                        </tr>
-                        <tr>
+-----------|------------
+@Test                |
+public void method() | The `@Test` annotation identifies a method as a test method.
+---------------------|-------------------------------------------------------------
                             <td align="left"> @Test (expected = Exception.class)</td>
                             <td align="left">
                                 Fails if the method does not throw the named
