@@ -526,15 +526,15 @@ Eclipse provides the **Alt**+**Shift**+**X,** **,T** shortcut to run the test in
 
 To see the result of an JUnit test, Eclipse uses the *JUnit* view which shows the results of the tests. You can also select individual unit tests in this view, right-click on them and select *Run* to execute them again.
 
-![JUnit view](xjunitview10.png.pagespeed.ic.rNOB-5kLhz.png)
+![JUnit view](xjunitview10.png)
 
 By default this view shows all tests. You can also configure, that it only shows failing tests.
 
-![JUnit view](xjunit_showonerroronly.png.pagespeed.ic.QnPEcqlzcK.png)
+![JUnit view](xjunit_showonerroronly.png)
 
 You can also define that the view is only activated if you have a failing test.
 
-![JUnit view](xjunit_showonerroronly2.png.pagespeed.ic.nL6cFn3FYX.png)
+![JUnit view](xjunit_showonerroronly2.png)
 
             <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
                 ### Note</h3>
@@ -573,7 +573,7 @@ assertEquals("10 x 5 must be 50", 50, tester.multiply(10, 5));
 
 To create a test suite in Eclipse, you select the test classes which should be included into this in the *Package Explorer* view, right-click on them and select *New* &#8594; *Other...* &#8594; *JUnit* &#8594; *JUnit Test Suite*.
 
-![Create a test suite](xjunittestsuite10.png.pagespeed.ic.765bNcH0vW.png)
+![Create a test suite](xjunittestsuite10.png)
 
 ### 8.5. Testing exception
 
@@ -834,11 +834,11 @@ public class MyClassTest {
 
 Right-click on your new test class and select *Run-As* &#8594; *JUnit Test*.
 
-![Run JUnit test in Eclipse](xjunit60.png.pagespeed.ic.ARgfXSOXch.png)
+![Run JUnit test in Eclipse](xjunit60.png)
 
 The result of the tests are displayed in the JUnit view. In our example one test should be successful and one test should show an error. This error is indicated by a red bar.
 
-![Result of running a unit test](xjunit70.png.pagespeed.ic.bwC7X8wpX7.png)
+![Result of running a unit test](xjunit70.png)
 
 The test is failing, because our multiplier class is currently not working correctly. It does a division instead of multiplication. Fix the bug and re-run the test to get a green bar.
 
