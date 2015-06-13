@@ -577,71 +577,27 @@ To create a test suite in Eclipse, you select the test classes which should be i
 
 ### 8.5. Testing exception
 
-            <p>
-                The
-                `@Test (expected = Exception.class)`
-                annotation is limited as it can only test for one exception. To test
-                exceptions, you can use the following test
-                pattern.
+The `@Test (expected = Exception.class)` annotation is limited as it can only test for one exception. To test exceptions, you can use the following test pattern.
 
-            </p>
+```java
+try {
+    mustThrowException();
+    fail();
+} catch (Exception e) {
+    // expected
+    // could also check for message of exception, etc.
+}
+```
 
-            <p>
+### 8.6. JUnit Plug-in Test
 
-            </p><pre class="programlisting">try</span> {
-   mustThrowException(); 
-   fail();
-} catch</span> (Exception e) {
-   // expected</em>
-   // could also check for message of exception, etc.</em>
-} </pre>
-            <p>
+JUnit Plug-in tests are used to write unit tests for your plug-ins. These tests are executed by a special test runner that launches another Eclipse instance in a separate VM—just and executes the test methods within that instance.
 
-            </p>
-        </div>
-        
-            
-                <div>
-                    <div>
-                        ### <a name="usingjunit_plugintest"></a>8.6. JUnit Plug-in Test
-                        </h3>
-                    </div>
-                </div>
-            </div>
-            <a class="indexterm" name="d379189e753"></a><a class="indexterm" name="d379189e756"></a>
+## 9. Setting Eclipse up for using JUnits static imports
 
-            <p>JUnit Plug-in tests are used to write unit tests for your plug-ins. These tests are executed by a special
-                test
-                runner that launches another Eclipse instance in a separate VM�just and executes the test
-                methods within that
-                instance.
+The Eclipse IDE cannot always create the corresponding `static import` statements automatically.
 
-            </p>
-        </div>
-    </div>
-    
-        
-            <div>
-                <div>
-                    ## <a name="juniteclipse_staticimports"></a>9. Setting Eclipse up for using
-                        JUnits static imports
-                    </h2>
-                </div>
-            </div>
-        </div>
-        <a class="indexterm" name="d379189e764"></a><a class="indexterm" name="d379189e769"></a>
-
-        <p>
-            The Eclipse IDE cannot always
-            create the
-            corresponding
-            `static import`
-            statements automatically.
-
-        </p>
-
-        <p>
-            You can configure the Eclipse IDE to
+You can configure the Eclipse IDE to
             use code completion to insert typical JUnit method calls and to add the static
             import automatically.
             For this
@@ -652,96 +608,25 @@ To create a test suite in Eclipse, you select the test classes which should be i
             <span class="guimenu">Java</span> &#8594; <span class="guisubmenu">Editor</span> &#8594; <span
                 class="guisubmenu">Content Assist</span> &#8594; <span class="guisubmenu">Favorites</span>.
 
-        </p>
+Use the *New Type* button to add the following entries to it:
 
-        <p>
-            Use the
-            <span class="guibutton">New Type</span>
-            button to add the following entries to it:
+* `org.junit.Assert`
+* `org.hamcrest.CoreMatchers`
+* `org.hamcrest.Matchers`
 
-        </p>
-
-        <div class="itemizedlist">
-            <ul class="itemizedlist" type="disc">
-                <li class="listitem">
-                    <p>`org.junit.Assert`
-
-                    </p>
-                </li>
-                <li class="listitem">
-                    <p>`org.hamcrest.CoreMatchers`
-
-                    </p>
-                </li>
-                <li class="listitem">
-                    <p>`org.hamcrest.Matchers`
-
-                    </p>
-                </li>
-            </ul>
-        </div>
-        <p>
-
-        </p>
-
-        <p>
-            This makes, for example, the
-            `assertTrue`,
-            `assertFalse`
-            and
-            `assertEquals`
-            methods directly available in the
-            *Content Assists*.
-
-        </p>
-
-        <p>
-
-        </p>
+This makes, for example, the `assertTrue`, `assertFalse` and `assertEquals` methods directly available in the *Content Assists*.
 
         <div class="mediaobject"><img src="Unit%20Testing%20with%20JUnit%20-%20Tutorial_files/xstaticimport10.png"
                                       alt="Adding static imports to the preferences"></div>
-        <p>
 
-        </p>
+You can now use *Content Assists* (shortcut: *Ctrl*+*Space*) to add the method and the import.
 
-        <p>
-            You can now use
-            *Content Assists*
-            (shortcut:
-            <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Space</strong></span>) to
-            add
-            the
-            method and the
-            import.
+## 10. Exercise: Using JUnit
 
-        </p>
-    </div>
-    
-        
-            <div>
-                <div>
-                    ## <a name="juniteclipse"></a>10. Exercise: Using JUnit
-                    </h2>
-                </div>
-            </div>
-        </div>
-        
-            
-                <div>
-                    <div>
-                        ### <a name="juniteclipse_prep"></a>10.1. Project preparation
-                        </h3>
-                    </div>
-                </div>
-            </div>
-            <p>
-                Create a new project called
-                *com.vogella.junit.first*.
+### 10.1. Project preparation
 
-            </p>
+Create a new project called *com.vogella.junit.first*.
 
-            <p>
                 Create a new source
                 folder
                 <code class="filename">test`. For this
@@ -918,99 +803,44 @@ public</span> class</span> MyClass {
 
             </p>
 
-            <p>Create a test with the following code.</p>
+Create a test with the following code.
 
-            <p>
+```java
+package com.vogella.junit.first;
 
-            </p><pre class="programlisting">package</span> com.vogella.junit.first;
+import static org.junit.Assert.assertEquals;
 
-import</span> static</span> org.junit.Assert.assertEquals;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
-import</span> org.junit.AfterClass;
-import</span> org.junit.BeforeClass;
-import</span> org.junit.Test;
-
-public</span> class</span> MyClassTest {
+public class MyClassTest {
   
-  <em>@Test(expected = IllegalArgumentException.class)</span></em>
-  public</span> void</span> testExceptionIsThrown() {
-    MyClass tester = new</span> MyClass();
-    tester.multiply(1000</span>, 5</span>);
-  }
+    @Test(expected = IllegalArgumentException.class)
+    public void testExceptionIsThrown() {
+        MyClass tester = new MyClass();
+        tester.multiply(1000, 5);
+    }
 
-  <em>@Test</span></em>
-  public</span> void</span> testMultiply() {
-    MyClass tester = new</span> MyClass();
-    assertEquals("10 x 5 must be 50"</span>, <span
-                    class="hl-number">50</span>, tester.multiply(10</span>, <span
-                    class="hl-number">5</span>));
-  }
-} </pre>
-            <p>
+    @Test
+    public void testMultiply() {
+        MyClass tester = new MyClass();
+        assertEquals("10 x 5 must be 50", 50, tester.multiply(10, 5));
+    }
+}
+```
 
-            </p>
-        </div>
-        
-            
-                <div>
-                    <div>
-                        ### <a name="juniteclipse_eclipse"></a>10.4. Run your test in Eclipse
-                        </h3>
-                    </div>
-                </div>
-            </div>
-            <p>
-                Right-click on your new test class and select
-                <span class="guimenu"> Run-As</span> &#8594; <span class="guisubmenu">JUnit Test</span>.
+### 10.4. Run your test in Eclipse
 
-            </p>
+Right-click on your new test class and select *Run-As* &#8594; *JUnit Test*.
 
-            <p>
+![Run JUnit test in Eclipse](xjunit60.png.pagespeed.ic.ARgfXSOXch.png)
 
-            </p>
+The result of the tests are displayed in the JUnit view. In our example one test should be successful and one test should show an error. This error is indicated by a red bar.
 
-            <div class="mediaobject"><img src="Unit%20Testing%20with%20JUnit%20-%20Tutorial_files/xjunit60.png"
-                                          alt="Run JUnit test in Eclipse"></div>
-            <p>
+![Result of running a unit test](xjunit70.png.pagespeed.ic.bwC7X8wpX7.png)
 
-            </p>
-
-            <p>
-                The result of the tests are displayed in the JUnit
-                view. In
-                our example one test should be successful and one test should
-                show an
-                error. This error is indicated by a red bar.
-
-            </p>
-
-            <p>
-
-            </p>
-
-            <div class="mediaobject"><img src="Unit%20Testing%20with%20JUnit%20-%20Tutorial_files/xjunit70.png"
-                                          alt="Result of running a unit test"></div>
-            <p>
-
-            </p>
-
-            <p>
-                The test is failing,
-                because our multiplier class is
-                currently not
-                working
-                correctly. It
-                does a
-                division instead of
-                multiplication. Fix the
-                bug
-                and re-run the
-                test to get
-                a green bar.
-
-            </p>
-        </div>
-    </div>
+The test is failing, because our multiplier class is currently not working correctly. It does a division instead of multiplication. Fix the bug and re-run the test to get a green bar.
 
 ## 11. Advanced JUnit options
 
