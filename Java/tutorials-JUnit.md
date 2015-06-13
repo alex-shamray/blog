@@ -446,94 +446,18 @@ The following table gives an overview of these methods. Parameters in [] bracket
 
 **Table 2. Methods to assert test results**
 
-                <div class="table-contents">
-                    <table summary="Methods to assert test results" border="1">
-                        <colgroup>
-                            <col class="c1" align="left">
-                            <col class="c2" align="left">
-                        </colgroup>
-                        <thead>
-                        <tr>
-                            <th align="left">Statement</th>
-                            <th align="left">Description</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td align="left">fail(message)</td>
-                            <td align="left">
-                                Let the method fail. Might be used to check that a
-                                certain
-                                part of the code is not reached or to have a
-                                failing
-                                test
-                                before
-                                the test code is implemented. The message parameter is
-                                optional.
+Statement | Description
+----------|------------
+fail(message) | Let the method fail. Might be used to check that a certain part of the code is not reached or to have a failing test before the test code is implemented. The message parameter is optional.
+assertTrue([message,] boolean condition) | Checks that the boolean condition is true.
+assertFalse([message,] boolean condition) | Checks that the boolean condition is false.
+assertEquals([message,] expected, actual) | Tests that two values are the same. Note: for arrays the reference is checked not the content of the arrays.
+assertEquals([message,] expected, actual, tolerance) | Test that float or double values match. The tolerance is the number of decimals which must be the same.
+assertNull([message,] object) | Checks that the object is null.
+assertNotNull([message,] object) | Checks that the object is not null.
+assertSame([message,] expected, actual) | Checks that both variables refer to the same object.
+assertNotSame([message,] expected, actual) | Checks that both variables refer to different objects.
 
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="left">assertTrue([message,] boolean condition)</td>
-                            <td align="left">Checks that the boolean condition is true.</td>
-                        </tr>
-                        <tr>
-                            <td align="left">assertFalse([message,] boolean condition)</td>
-                            <td align="left">Checks that the boolean condition is false.</td>
-                        </tr>
-                        <tr>
-                            <td align="left">assertEquals([message,] expected, actual)</td>
-                            <td align="left">
-                                Tests that two values are the same. Note: for arrays the
-                                reference is checked not the content of the
-                                arrays.
-
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="left">
-                                assertEquals([message,] expected, actual,
-                                tolerance)
-
-                            </td>
-                            <td align="left">
-                                Test that float or double values match. The tolerance is
-                                the number
-                                of decimals which must be the same.
-
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="left">assertNull([message,] object)</td>
-                            <td align="left">Checks that the object is null.</td>
-                        </tr>
-                        <tr>
-                            <td align="left">assertNotNull([message,] object)</td>
-                            <td align="left">Checks that the object is not null.</td>
-                        </tr>
-                        <tr>
-                            <td align="left"> assertSame([message,] expected, actual)</td>
-                            <td align="left">
-                                Checks that both variables refer to the same object.
-
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="left">assertNotSame([message,] expected, actual)</td>
-                            <td align="left">
-                                Checks that both variables refer to different objects.
-
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <p><br class="table-break">
-
-            </p>
-        </div>
-        
 ### 6.3. Test execution order
 
 JUnit assumes that all test methods can be executed in an arbitrary order. Well-written test code should not assume any order, i.e., tests should not depend on other tests.
@@ -574,8 +498,7 @@ http://junit.org/
 
 You can write the JUnit tests manually, but Eclipse supports the creation of JUnit tests via wizards.
 
-            <p>
-                For example, to create
+For example, to create
                 a JUnit test or a test class for an existing
                 class, right-click
                 on
@@ -588,15 +511,10 @@ You can write the JUnit tests manually, but Eclipse supports the creation of JUn
                 and select
                 <span class="guimenu">New</span> &#8594; <span class="guisubmenu">JUnit Test Case</span>.
 
-            </p>
-
-            <p>
-                Alternatively you can also use the JUnit wizards available under
+Alternatively you can also use the JUnit wizards available under
                 <span class="guimenu">File</span> &#8594; <span class="guisubmenu">New </span> &#8594; <span
                     class="guisubmenu">Other...</span> &#8594; <span class="guisubmenu">Java</span> &#8594; <span
                     class="guisubmenu">JUnit</span>.
-
-            </p>
 
 ### 8.2. Running JUnit tests
 
@@ -604,87 +522,19 @@ The Eclipse IDE also provides support for executing your tests interactively.
 
 To run a test, select the class which contains the tests, right-click on it and select <span class="guimenu">Run-as</span> &#8594; <span class="guisubmenu">JUnit Test</span>. This starts JUnit and executes all test methods in this class.
 
-            <p>
-                Eclipse provides the
-                <span class="keycap"><strong>Alt</strong></span>+<span
-                    class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>X,</strong></span>
-                <span class="keycap"><strong>,T</strong></span>
-                shortcut to run the test in the selected class. If you position the
-                cursor in the Java editor on one test method name,
-                this shortcut runs
-                only the selected test
-                method.
+Eclipse provides the **Alt**+**Shift**+**X,** **,T** shortcut to run the test in the selected class. If you position the cursor in the Java editor on one test method name, this shortcut runs only the selected test method.
 
-            </p>
+To see the result of an JUnit test, Eclipse uses the *JUnit* view which shows the results of the tests. You can also select individual unit tests in this view, right-click on them and select *Run* to execute them again.
 
-            <p>
-                To see the result of an JUnit test, Eclipse uses the
-                <span class="guilabel">JUnit</span>
-                view
-                which shows the results of the tests. You can also select
-                individual
-                unit tests in this
-                view
-                , right-click on them
-                and select
-                <span class="guilabel">Run</span>
-                to execute them again.
+![JUnit view](xjunitview10.png.pagespeed.ic.rNOB-5kLhz.png)
 
-            </p>
+By default this view shows all tests. You can also configure, that it only shows failing tests.
 
-            <p>
+![JUnit view](xjunit_showonerroronly.png.pagespeed.ic.QnPEcqlzcK.png)
 
-            </p>
+You can also define that the view is only activated if you have a failing test.
 
-            <div class="mediaobject"><img src="Unit%20Testing%20with%20JUnit%20-%20Tutorial_files/xjunitview10.png"
-                                          alt="JUnit view"></div>
-            <p>
-
-            </p>
-
-            <p>
-                By default this
-                view
-                shows all tests.
-                You
-                can also configure, that
-                it only
-                shows
-                failing
-                tests.
-
-            </p>
-
-            <p>
-
-            </p>
-
-            <div class="mediaobject"><img
-                    src="Unit%20Testing%20with%20JUnit%20-%20Tutorial_files/xjunit_showonerroronly.png"
-                    alt="JUnit view"></div>
-            <p>
-
-            </p>
-
-            <p>
-                You can also define that the
-                view
-                is only activated if you have
-                a
-                failing test.
-
-            </p>
-
-            <p>
-
-            </p>
-
-            <div class="mediaobject"><img
-                    src="Unit%20Testing%20with%20JUnit%20-%20Tutorial_files/xjunit_showonerroronly2.png"
-                    alt="JUnit view"></div>
-            <p>
-
-            </p>
+![JUnit view](xjunit_showonerroronly2.png.pagespeed.ic.nL6cFn3FYX.png)
 
             <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
                 ### Note</h3>
@@ -698,102 +548,34 @@ To run a test, select the class which contains the tests, right-click on it and 
                 </p>
             </div>
         </div>
-        
-            
-                <div>
-                    <div>
-                        ### <a name="usingjunit_staticimports"></a>8.3. JUnit static imports
-                        </h3>
-                    </div>
-                </div>
-            </div>
-            <a class="indexterm" name="d379189e685"></a>
 
-            <p>
-                Static import is a feature that allows fields and
-                methods) defined in
-                a class
-                as
-                `public static`
-                to be used in Java code
-                without specifying the class
-                in which the field
-                is defined.
+### 8.3. JUnit static imports
 
-            </p>
+Static import is a feature that allows fields and methods) defined in a class as `public static` to be used in Java code without specifying the class in which the field is defined.
 
-            <p>
-                JUnit assert statement are typically defined as
-                `public static`
-                to allow the developer to write short test statements. The following
-                snippet demonstrates an assert statement with and
-                without static
-                imports.
+JUnit assert statement are typically defined as `public static` to allow the developer to write short test statements. The following snippet demonstrates an assert statement with and without static imports.
 
-            </p>
-
-            <p>
-
-            </p><pre class="programlisting">// without static imports you
-            have to write the following statement</em>
-Assert.assertEquals("10 x 5 must be 50"</span>, <span
-                    class="hl-number">50</span>, tester.multiply(10</span>, <span
-                    class="hl-number">5</span>));
+```java
+// without static imports you have to write the following statement
+Assert.assertEquals("10 x 5 must be 50", 50, tester.multiply(10, 5));
 
 
-// alternatively define assertEquals as static import</em>
-import</span> static</span> org.junit.Assert.assertEquals;
+// alternatively define assertEquals as static import
+import static org.junit.Assert.assertEquals;
 
-// more code</em>
+// more code
 
-// use assertEquals directly because of the static import</em>
-assertEquals("10 x 5 must be 50"</span>, 50</span>, tester.multiply(<span
-                    class="hl-number">10</span>, 5</span>)); </pre>
-            <p>
+// use assertEquals directly because of the static import
+assertEquals("10 x 5 must be 50", 50, tester.multiply(10, 5));
+```
 
-            </p>
-        </div>
-        
-            
-                <div>
-                    <div>
-                        ### <a name="usingjunit_testsuites"></a>8.4. Wizard for creating test suites
-                        </h3>
-                    </div>
-                </div>
-            </div>
-            <p>
-                To create a test suite in Eclipse, you select the test classes which
-                should be
-                included into this in the
-                <span class="guilabel">Package Explorer</span>
-                view, right-click on them and
-                select
-                <span class="guimenu">New </span> &#8594; <span class="guisubmenu">Other...</span> &#8594; <span
-                    class="guisubmenu">JUnit</span> &#8594; <span class="guisubmenu">JUnit Test Suite</span>.
+### 8.4. Wizard for creating test suites
 
-            </p>
+To create a test suite in Eclipse, you select the test classes which should be included into this in the *Package Explorer* view, right-click on them and select *New* &#8594; *Other...* &#8594; *JUnit* &#8594; *JUnit Test Suite*.
 
-            <p>
+![Create a test suite](xjunittestsuite10.png.pagespeed.ic.765bNcH0vW.png)
 
-            </p>
-
-            <div class="mediaobject"><img src="Unit%20Testing%20with%20JUnit%20-%20Tutorial_files/xjunittestsuite10.png"
-                                          alt="Create a test suite"></div>
-            <p>
-
-            </p>
-        </div>
-        
-            
-                <div>
-                    <div>
-                        ### <a name="usingjunit_execption"></a>8.5. Testing exception
-                        </h3>
-                    </div>
-                </div>
-            </div>
-            <a class="indexterm" name="d379189e735"></a>
+### 8.5. Testing exception
 
             <p>
                 The
