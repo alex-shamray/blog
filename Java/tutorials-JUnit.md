@@ -727,81 +727,21 @@ public</span> class</span> MyClass {
             </p>
         </div>
         
-            
-                <div>
-                    <div>
-                        ### <a name="juniteclipse_test"></a>10.3. Create a JUnit test
-                        </h3>
-                    </div>
-                </div>
-            </div>
-            <p>
-                Right-click on your new class in the
-                <span class="guilabel">Package Explorer</span>
-                view
-                and select
-                <span class="guimenu">New</span> &#8594; <span class="guisubmenu">JUnit Test Case</span>.
+### 10.3. Create a JUnit test
 
-            </p>
+Right-click on your new class in the *Package Explorer* view and select *New* &#8594; *JUnit Test Case*.
 
-            <p>
-                In the following wizard
-                ensure that the
-                <span class="guilabel">New JUnit 4 test</span>
-                flag
-                is selected
-                and set the source folder to
-                <code class="filename">test`,
-                so
-                that your test class gets created in this folder.
+In the following wizard ensure that the *New JUnit 4 test* flag is selected and set the source folder to `test`, so that your test class gets created in this folder.
 
-            </p>
+![Create new test class](xjunit30.png)
 
-            <p>
+Press the *Next* button and select the methods that you want to test.
 
-            </p>
+![Selecting the methods to test](xjunit40.png)
 
-            <div class="mediaobject"><img src="Unit%20Testing%20with%20JUnit%20-%20Tutorial_files/xjunit30.png"
-                                          alt="Create new test class"></div>
-            <p>
+If the JUnit library is not part of the classpath of your project, Eclipse will prompt you to add it. Use this to add JUnit to your project.
 
-            </p>
-
-            <p>
-                Press the
-                <span class="guibutton">Next</span>
-                button and select the methods that you want to test.
-
-            </p>
-
-            <p>
-
-            </p>
-
-            <div class="mediaobject"><img src="Unit%20Testing%20with%20JUnit%20-%20Tutorial_files/xjunit40.png"
-                                          alt="Selecting the methods to test"></div>
-            <p>
-
-            </p>
-
-            <p>
-                If the JUnit library is not part of the classpath of your
-                project, Eclipse
-                will
-                prompt you to add it. Use this to add JUnit to
-                your project.
-
-            </p>
-
-            <p>
-
-            </p>
-
-            <div class="mediaobject"><img src="Unit%20Testing%20with%20JUnit%20-%20Tutorial_files/xjunit50.png"
-                                          alt="Eclipse prompt for adding JUnit to the project classpath"></div>
-            <p>
-
-            </p>
+![Eclipse prompt for adding JUnit to the project classpath](xjunit50.png)
 
 Create a test with the following code.
 
