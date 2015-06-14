@@ -10,7 +10,7 @@ This tutorial explains unit testing with JUnit 4.x. It explains the creation of 
 
 **Table of Contents**
 
-1. [Unit tests, integration tests and performance tests](#unitintegrationperformancetests)
+1. s [Unit tests, integration tests and performance tests](#unitintegrationperformancetests)
     1.1. [Unit tests and unit testing](#junit_intro)
     1.2. [Integration tests](#junit_organization)
     1.3. [Performance tests](#junit_performancetests)
