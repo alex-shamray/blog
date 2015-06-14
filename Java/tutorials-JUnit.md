@@ -32,44 +32,21 @@ This tutorial explains unit testing with JUnit 4.x. It explains the creation of 
     * [5.6. JUnit test suites](#juniteclipse_testsuite)
     * [5.7. Run your test from the command line](#juniteclipse_code)
 * [6. Basic JUnit code constructs](#junitannoationsandassertstatements)
-            
-                
-                    <a href="#usingjunit_annotations">6.1. Available JUnit
-                        annotations</a>
-                    <a href="#usingjunit_asserts">6.2. Assert statements</a>
-                    <a href="#usingjunit_executionorder">6.3. Test execution order</a>
-                    
-                
-            
-            <a href="#installation">7. Installation of JUnit</a>
-            
-                
-                    <a href="#installation_gradle">7.1. Using JUnit with Gradle</a>
-                    
-                    <a href="#installation_eclipse">7.2. Using JUnit integrated into
-                        Eclipse</a>
-                    <a href="#installation_junit">7.3. Downloading the JUnit
-                        library</a>
-                
-            
-            <a href="#eclipse">8. Eclipse support for JUnit</a>
-            
-                
-                    <a href="#eclipse_creatingjunittest">8.1. Creating JUnit tests</a>
-                    
-                    <a href="#eclipse_runningjunittest">8.2. Running JUnit tests</a>
-                    
-                    <a href="#usingjunit_staticimports">8.3. JUnit static imports</a>
-                    
-                    <a href="#usingjunit_testsuites">8.4. Wizard for creating test suites</a>
-                    
-                    <a href="#usingjunit_execption">8.5. Testing exception</a>
-                    <a href="#usingjunit_plugintest">8.6. JUnit Plug-in Test</a>
-                
-            
-            <a href="#juniteclipse_staticimports">9. Setting Eclipse up for using JUnits
-                static imports</a>
-
+    * [6.1. Available JUnit annotations](#usingjunit_annotations)
+    * [6.2. Assert statements](#usingjunit_asserts)
+    * [6.3. Test execution order](#usingjunit_executionorder)
+* [7. Installation of JUnit](#installation)
+    * [7.1. Using JUnit with Gradle](#installation_gradle")
+    * [7.2. Using JUnit integrated into Eclipse](#installation_eclipse)
+    * [7.3. Downloading the JUnit library](#installation_junit)
+* [8. Eclipse support for JUnit](#eclipse)
+    * [8.1. Creating JUnit tests](#eclipse_creatingjunittest)
+    * [8.2. Running JUnit tests](#eclipse_runningjunittest)
+    * [8.3. JUnit static imports](#usingjunit_staticimports)
+    * [8.4. Wizard for creating test suites](#usingjunit_testsuites)
+    * [8.5. Testing exception](#usingjunit_execption)
+    * [8.6. JUnit Plug-in Test](#usingjunit_plugintest)
+* [9. Setting Eclipse up for using JUnits static imports](#juniteclipse_staticimports)
 * [10. Exercise: Using JUnit](#juniteclipse)
     * [10.1. Project preparation](#juniteclipse_prep)
     * [10.2. Create a Java class](#juniteclipse_class)
@@ -868,7 +845,7 @@ public class SlowTestSuite {
 
 Unit testing also makes use of object mocking. In this case the real object is exchanged by a replacement which has a predefined behavior for the test.
 
-There are several frameworks available for mocking. To learn more about mock frameworks please see the [Mockito tutorial](http://www.vogella.com/tutorials/Mockito/article.html) and the [EasyMock tutorial](http://www.vogella.com/tutorials/EasyMock/article.html)</a>
+There are several frameworks available for mocking. To learn more about mock frameworks please see the [Mockito tutorial](http://www.vogella.com/tutorials/Mockito/article.html) and the [EasyMock tutorial](http://www.vogella.com/tutorials/EasyMock/article.html)
 
 ## 13. Links and Literature
 
