@@ -9,130 +9,101 @@ Version 2.8
 This tutorial explains unit testing with JUnit 4.x. It explains the creation of JUnit tests. It also covers the usage of the Eclipse IDE to work with JUnit tests.
 
 **Table of Contents**
-        <dl>
-            <dt><span class="section"><a href="#unitintegrationperformancetests">1. Unit tests, integration tests and
-                performance tests</a></span></dt>
-            <dd>
-                <dl>
-                    <dt><span class="section"><a href="#junit_intro">1.1. Unit tests and unit testing</a></span></dt>
-                    <dt><span class="section"><a href="#junit_organization">1.2. Integration tests</a></span></dt>
-                    <dt><span class="section"><a href="#junit_performancetests">1.3. Performance tests</a></span></dt>
-                    <dt><span class="section"><a href="#whytesting">1.4. Building effective tests</a></span></dt>
-                </dl>
-            </dd>
-            <dt><span class="section"><a href="#testingterminology">2. Testing terminology</a></span></dt>
-            <dd>
-                <dl>
-                    <dt><span class="section"><a href="#junit_testfixture">2.1. Test fixture</a></span></dt>
-                    <dt><span class="section"><a href="#behaviorvsstatetesting">2.2. Behavior vs. state
-                        testing</a></span></dt>
-                </dl>
-            </dd>
-            <dt><span class="section"><a href="#testorganization">3. Test organization</a></span></dt>
-            <dd>
-                <dl>
-                    <dt><span class="section"><a href="#junit_testorganization">3.1. Test organization for Java
-                        projects</a></span></dt>
-                    <dt><span class="section"><a href="#junit_whattotest">3.2. What should you test?</a></span></dt>
-                    <dt><span class="section"><a href="#junit_legacycode">3.3. Introducing tests in legacy
-                        code</a></span></dt>
-                </dl>
-            </dd>
-            <dt><span class="section"><a href="#unittesting">4. Testing frameworks for Java</a></span></dt>
-            <dt><span class="section"><a href="#junittesting">5. Using JUnit</a></span></dt>
-            <dd>
-                <dl>
-                    <dt><span class="section"><a href="#unittesting_junit">5.1. The JUnit framework</a></span></dt>
-                    <dt><span class="section"><a href="#unittesting_junit_test">5.2. How to define a test in JUnit?</a></span>
-                    </dt>
-                    <dt><span class="section"><a href="#unittesting_junitexample">5.3. Example JUnit test</a></span>
-                    </dt>
-                    <dt><span class="section"><a href="#junit_namingconventions">5.4. JUnit naming
-                        conventions</a></span></dt>
-                    <dt><span class="section"><a href="#junit_namingconventions_maven">5.5. JUnit naming conventions for
-                        Maven</a></span></dt>
-                    <dt><span class="section"><a href="#juniteclipse_testsuite">5.6. JUnit test suites</a></span></dt>
-                    <dt><span class="section"><a href="#juniteclipse_code">5.7. Run your test from the command line</a></span>
-                    </dt>
-                </dl>
-            </dd>
-            <dt><span class="section"><a href="#junitannoationsandassertstatements">6. Basic JUnit code
-                constructs</a></span></dt>
-            <dd>
-                <dl>
-                    <dt><span class="section"><a href="#usingjunit_annotations">6.1. Available JUnit
-                        annotations</a></span></dt>
-                    <dt><span class="section"><a href="#usingjunit_asserts">6.2. Assert statements</a></span></dt>
-                    <dt><span class="section"><a href="#usingjunit_executionorder">6.3. Test execution order</a></span>
-                    </dt>
-                </dl>
-            </dd>
-            <dt><span class="section"><a href="#installation">7. Installation of JUnit</a></span></dt>
-            <dd>
-                <dl>
-                    <dt><span class="section"><a href="#installation_gradle">7.1. Using JUnit with Gradle</a></span>
-                    </dt>
-                    <dt><span class="section"><a href="#installation_eclipse">7.2. Using JUnit integrated into
-                        Eclipse</a></span></dt>
-                    <dt><span class="section"><a href="#installation_junit">7.3. Downloading the JUnit
-                        library</a></span></dt>
-                </dl>
-            </dd>
-            <dt><span class="section"><a href="#eclipse">8. Eclipse support for JUnit</a></span></dt>
-            <dd>
-                <dl>
-                    <dt><span class="section"><a href="#eclipse_creatingjunittest">8.1. Creating JUnit tests</a></span>
-                    </dt>
-                    <dt><span class="section"><a href="#eclipse_runningjunittest">8.2. Running JUnit tests</a></span>
-                    </dt>
-                    <dt><span class="section"><a href="#usingjunit_staticimports">8.3. JUnit static imports</a></span>
-                    </dt>
-                    <dt><span class="section"><a href="#usingjunit_testsuites">8.4. Wizard for creating test suites</a></span>
-                    </dt>
-                    <dt><span class="section"><a href="#usingjunit_execption">8.5. Testing exception</a></span></dt>
-                    <dt><span class="section"><a href="#usingjunit_plugintest">8.6. JUnit Plug-in Test</a></span></dt>
-                </dl>
-            </dd>
-            <dt><span class="section"><a href="#juniteclipse_staticimports">9. Setting Eclipse up for using JUnits
-                static imports</a></span></dt>
-            <dt><span class="section"><a href="#juniteclipse">10. Exercise: Using JUnit</a></span></dt>
-            <dd>
-                <dl>
-                    <dt><span class="section"><a href="#juniteclipse_prep">10.1. Project preparation</a></span></dt>
-                    <dt><span class="section"><a href="#juniteclipse_class">10.2. Create a Java class</a></span></dt>
-                    <dt><span class="section"><a href="#juniteclipse_test">10.3. Create a JUnit test</a></span></dt>
-                    <dt><span class="section"><a href="#juniteclipse_eclipse">10.4. Run your test in Eclipse</a></span>
-                    </dt>
-                </dl>
-            </dd>
-            <dt><span class="section"><a href="#junitadvanced">11. Advanced JUnit options</a></span></dt>
-            <dd>
-                <dl>
-                    <dt><span class="section"><a href="#junitadvanced_parameterizedtests">11.1. Parameterized
-                        test</a></span></dt>
-                    <dt><span class="section"><a href="#junitadvanced_rules">11.2. JUnit Rules</a></span></dt>
-                    <dt><span class="section"><a href="#junitadvanced_rules_writingcustomrules">11.3. Writing custom
-                        JUnit Rules</a></span></dt>
-                    <dt><span class="section"><a href="#junitadvanced_categories">11.4. Categories</a></span></dt>
-                </dl>
-            </dd>
-            <dt><span class="section"><a href="#mockingframeworks">12. Mocking</a></span></dt>
-            <dt><span class="section"><a href="#supportandlicense">13. About this website</a></span></dt>
-            <dd>
-                <dl>
-                    <dt><span class="section"><a href="#thankyou">13.1. </a></span></dt>
-                </dl>
-            </dd>
-            <dt><span class="section"><a href="#resources">14. Links and Literature</a></span></dt>
-            <dd>
-                <dl>
-                    <dt><span class="section"><a href="#sourcecode">14.1. Source Code</a></span></dt>
-                    <dt><span class="section"><a href="#junit_links">14.2. JUnit Resources</a></span></dt>
-                    <dt><span class="section"><a href="#resources_general">14.3. vogella GmbH training and consulting
-                        support</a></span></dt>
-                </dl>
-            </dd>
-        </dl>
+
+1. [Unit tests, integration tests and performance tests](#unitintegrationperformancetests)
+    1.1. [Unit tests and unit testing](#junit_intro)
+    1.2. [Integration tests](#junit_organization)
+    1.3. [Performance tests](#junit_performancetests)
+    1.4. [Building effective tests](#whytesting)
+2. [Testing terminology](#testingterminology)
+                    <a href="#junit_testfixture">2.1. Test fixture</a>
+                    <a href="#behaviorvsstatetesting">2.2. Behavior vs. state
+                        testing</a>
+                
+            
+            <a href="#testorganization">3. Test organization</a>
+            
+                
+                    <a href="#junit_testorganization">3.1. Test organization for Java
+                        projects</a>
+                    <a href="#junit_whattotest">3.2. What should you test?</a>
+                    <a href="#junit_legacycode">3.3. Introducing tests in legacy
+                        code</a>
+                
+            
+            <a href="#unittesting">4. Testing frameworks for Java</a>
+            <a href="#junittesting">5. Using JUnit</a>
+            
+                
+                    <a href="#unittesting_junit">5.1. The JUnit framework</a>
+                    <a href="#unittesting_junit_test">5.2. How to define a test in JUnit?</a>
+                    
+                    <a href="#unittesting_junitexample">5.3. Example JUnit test</a>
+                    
+                    <a href="#junit_namingconventions">5.4. JUnit naming
+                        conventions</a>
+                    <a href="#junit_namingconventions_maven">5.5. JUnit naming conventions for
+                        Maven</a>
+                    <a href="#juniteclipse_testsuite">5.6. JUnit test suites</a>
+                    <a href="#juniteclipse_code">5.7. Run your test from the command line</a>
+                    
+                
+            
+            <a href="#junitannoationsandassertstatements">6. Basic JUnit code
+                constructs</a>
+            
+                
+                    <a href="#usingjunit_annotations">6.1. Available JUnit
+                        annotations</a>
+                    <a href="#usingjunit_asserts">6.2. Assert statements</a>
+                    <a href="#usingjunit_executionorder">6.3. Test execution order</a>
+                    
+                
+            
+            <a href="#installation">7. Installation of JUnit</a>
+            
+                
+                    <a href="#installation_gradle">7.1. Using JUnit with Gradle</a>
+                    
+                    <a href="#installation_eclipse">7.2. Using JUnit integrated into
+                        Eclipse</a>
+                    <a href="#installation_junit">7.3. Downloading the JUnit
+                        library</a>
+                
+            
+            <a href="#eclipse">8. Eclipse support for JUnit</a>
+            
+                
+                    <a href="#eclipse_creatingjunittest">8.1. Creating JUnit tests</a>
+                    
+                    <a href="#eclipse_runningjunittest">8.2. Running JUnit tests</a>
+                    
+                    <a href="#usingjunit_staticimports">8.3. JUnit static imports</a>
+                    
+                    <a href="#usingjunit_testsuites">8.4. Wizard for creating test suites</a>
+                    
+                    <a href="#usingjunit_execption">8.5. Testing exception</a>
+                    <a href="#usingjunit_plugintest">8.6. JUnit Plug-in Test</a>
+                
+            
+            <a href="#juniteclipse_staticimports">9. Setting Eclipse up for using JUnits
+                static imports</a>
+
+<a href="#juniteclipse">10. Exercise: Using JUnit</a>
+                    <a href="#juniteclipse_prep">10.1. Project preparation</a>
+                    <a href="#juniteclipse_class">10.2. Create a Java class</a>
+                    <a href="#juniteclipse_test">10.3. Create a JUnit test</a>
+                    <a href="#juniteclipse_eclipse">10.4. Run your test in Eclipse</a>
+11. [Advanced JUnit options](#junitadvanced)
+    11.1. [Parameterized test](#junitadvanced_parameterizedtests)
+    11.2. [JUnit Rules](#junitadvanced_rules)
+    11.3. [Writing custom JUnit Rules](#junitadvanced_rules_writingcustomrules)
+    11.4. [Categories](#junitadvanced_categories)
+12. [Mocking](#mockingframeworks)
+13. [Links and Literature](#resources)
+    13.1. [Source Code](#sourcecode)
+    13.2. [JUnit Resources](#junit_links)
+
 
 ## 1. Unit tests, integration tests and performance tests
 
@@ -227,7 +198,7 @@ The following code shows a JUnit test. This test assumes that the `MyClass` clas
 ```java
 package org.eclipse.e4.core.internal.tests;
 
-import static</span> org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
@@ -506,7 +477,7 @@ Alternatively you can also use the JUnit wizards available under *File* &#8594; 
 
 The Eclipse IDE also provides support for executing your tests interactively.
 
-To run a test, select the class which contains the tests, right-click on it and select <span class="guimenu">Run-as</span> &#8594; <span class="guisubmenu">JUnit Test</span>. This starts JUnit and executes all test methods in this class.
+To run a test, select the class which contains the tests, right-click on it and select <span class="guimenu">Run-as &#8594; <span class="guisubmenu">JUnit Test. This starts JUnit and executes all test methods in this class.
 
 Eclipse provides the **Alt**+**Shift**+**X,** **,T** shortcut to run the test in the selected class. If you position the cursor in the Java editor on one test method name, this shortcut runs only the selected test method.
 
@@ -612,7 +583,7 @@ In the `src` folder, create the `com.vogella.junit.first` package and the follow
 package com.vogella.junit.first;
 
 public class MyClass {
-    public int multiply(int x, int</span> y) {
+    public int multiply(int x, int y) {
         // the following is just an example</em>
         if (x > 999) {
             throw new IllegalArgumentException("X should be less than 1000");
@@ -961,11 +932,11 @@ There are several frameworks available for mocking. To learn more about mock fra
 
 ## 13. Links and Literature
 
-### 14.1. Source Code
+### 13.1. Source Code
 
 [Source Code of Examples](http://www.vogella.com/code/index.html)
 
-### 14.2. JUnit Resources
+### 13.2. JUnit Resources
 
 [Eclipse IDE book from Lars Vogel](http://www.amazon.com/dp/3943747042)
 
