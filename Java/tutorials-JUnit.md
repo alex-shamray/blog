@@ -272,7 +272,7 @@ The following table gives an overview of these methods. Parameters in [] bracket
 
 Statement | Description
 ----------|------------
-```java fail(message)``` | Let the method fail. Might be used to check that a certain part of the code is not reached or to have a failing test before the test code is implemented. The message parameter is optional.
+`fail(message)` | Let the method fail. Might be used to check that a certain part of the code is not reached or to have a failing test before the test code is implemented. The message parameter is optional.
 ```assertTrue([message,] boolean condition)``` | Checks that the boolean condition is true.
 ```assertFalse([message,] boolean condition)``` | Checks that the boolean condition is false.
 ```assertEquals([message,] expected, actual)``` | Tests that two values are the same. Note: for arrays the reference is checked not the content of the arrays.
