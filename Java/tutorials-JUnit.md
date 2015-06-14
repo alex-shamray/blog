@@ -805,4 +805,4 @@ There are several frameworks available for mocking. To learn more about mock fra
 
 #### Source
 
-[Unit Testing with JUnit - Tutorial](http://www.vogella.com/tutorials/JUnit/article.html) (Version 2.8, 08.06.2015)
+"Unit Testing with JUnit - Tutorial", Lars Vogel (Version 2.8, 08.06.2015) [http://www.vogella.com/tutorials/JUnit/article.html](http://www.vogella.com/tutorials/JUnit/article.html)
