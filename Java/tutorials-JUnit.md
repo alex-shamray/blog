@@ -801,3 +801,7 @@ There are several frameworks available for mocking. To learn more about mock fra
 [Eclipse IDE book from Lars Vogel](http://www.amazon.com/dp/3943747042)
 
 [JUnit Homepage](http://www.junit.org/)
+
+#### Source
+
+[http://www.vogella.com/tutorials/JUnit/article.html](Unit Testing with JUnit - Tutorial) (Version 2.8, 08.06.2015)
