@@ -498,23 +498,9 @@ http://junit.org/
 
 You can write the JUnit tests manually, but Eclipse supports the creation of JUnit tests via wizards.
 
-For example, to create
-                a JUnit test or a test class for an existing
-                class, right-click
-                on
-                your new class,
-                select this
-                class in
-                the
-                <span class="guilabel">Package Explorer</span>
-                view, right-click on it
-                and select
-                <span class="guimenu">New</span> &#8594; <span class="guisubmenu">JUnit Test Case</span>.
+For example, to create a JUnit test or a test class for an existing class, right-click on your new class, select this class in the *Package Explorer* view, right-click on it and select *New* &#8594; *JUnit Test Case*.
 
-Alternatively you can also use the JUnit wizards available under
-                <span class="guimenu">File</span> &#8594; <span class="guisubmenu">New </span> &#8594; <span
-                    class="guisubmenu">Other...</span> &#8594; <span class="guisubmenu">Java</span> &#8594; <span
-                    class="guisubmenu">JUnit</span>.
+Alternatively you can also use the JUnit wizards available under *File* &#8594; *New* &#8594; *Other...* &#8594; *Java* &#8594; *JUnit*.
 
 ### 8.2. Running JUnit tests
 
@@ -536,18 +522,7 @@ You can also define that the view is only activated if you have a failing test.
 
 ![JUnit view](xjunit_showonerroronly2.png)
 
-            <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
-                ### Note</h3>
-
-                <p>
-                    Eclipse creates run configurations for tests. You can see and modify
-                    these via the
-                    <span class="guimenu">Run</span> &#8594; <span class="guisubmenu">Run Configurations...</span>
-                    menu.
-
-                </p>
-            </div>
-        </div>
+> **Note:** Eclipse creates run configurations for tests. You can see and modify these via the *Run* &#8594; *Run Configurations...* menu.
 
 ### 8.3. JUnit static imports
 
@@ -597,16 +572,7 @@ JUnit Plug-in tests are used to write unit tests for your plug-ins. These tests 
 
 The Eclipse IDE cannot always create the corresponding `static import` statements automatically.
 
-You can configure the Eclipse IDE to
-            use code completion to insert typical JUnit method calls and to add the static
-            import automatically.
-            For this
-            open the
-            Preferences via
-            <span class="guimenu">Window</span> &#8594; <span class="guisubmenu">Preferences</span>
-            and select
-            <span class="guimenu">Java</span> &#8594; <span class="guisubmenu">Editor</span> &#8594; <span
-                class="guisubmenu">Content Assist</span> &#8594; <span class="guisubmenu">Favorites</span>.
+You can configure the Eclipse IDE to use code completion to insert typical JUnit method calls and to add the static import automatically. For this open the Preferences via *Window* &#8594; *Preferences* and select *Java* &#8594; *Editor* &#8594; *Content Assist* &#8594; *Favorites*.
 
 Use the *New Type* button to add the following entries to it:
 
@@ -616,8 +582,7 @@ Use the *New Type* button to add the following entries to it:
 
 This makes, for example, the `assertTrue`, `assertFalse` and `assertEquals` methods directly available in the *Content Assists*.
 
-        <div class="mediaobject"><img src="Unit%20Testing%20with%20JUnit%20-%20Tutorial_files/xstaticimport10.png"
-                                      alt="Adding static imports to the preferences"></div>
+![Adding static imports to the preferences](xstaticimport10.png)
 
 You can now use *Content Assists* (shortcut: *Ctrl*+*Space*) to add the method and the import.
 
@@ -637,8 +602,7 @@ The result is depicted in the following screenshot.
 
 ![Creating a new folder](xjunit20.png)
 
-> ### Tip
-> You can also add a new source folder by right-clicking on a project and selecting *New* &#8594; *Source Folder*.
+> **Tip:** You can also add a new source folder by right-clicking on a project and selecting *New* &#8594; *Source Folder*.
 
 ### 10.2. Create a Java class
 
