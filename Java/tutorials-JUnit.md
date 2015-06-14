@@ -253,7 +253,8 @@ JUnit 4.x uses annotations to mark methods as test methods and to configure them
 
 Annotation | Description
 -----------|------------
-<code>@Test<br> public void method()</code> | The `@Test` annotation identifies a method as a test method.
+<code>@Test
+public void method()</code> | The `@Test` annotation identifies a method as a test method.
 `@Test (expected = Exception.class)` | Fails if the method does not throw the named exception.
 `@Test(timeout=100)` | Fails if the method takes longer than 100 milliseconds.
 `@Before<br> public void method()` | This method is executed before each test. It is used to prepare the test environment (e.g., read input data, initialize the class).
