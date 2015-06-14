@@ -627,106 +627,37 @@ You can now use *Content Assists* (shortcut: *Ctrl*+*Space*) to add the method a
 
 Create a new project called *com.vogella.junit.first*.
 
-                Create a new source
-                folder
-                <code class="filename">test`. For this
-                right-click on your
-                project,
-                select
-                <span class="guilabel">Properties</span>
-                and choose
-                <span class="guimenu">Java</span> &#8594; <span class="guisubmenu">Build Path</span>. Select the
-                <span class="guilabel">Source</span>
-                tab.
+Create a new source folder `test`. For this right-click on your project, select *Properties* and choose *Java* &#8594; *Build Path*. Select the *Source* tab.
 
-            </p>
+![Create new source folder for the tests](xjunit10.png)
 
-            <p>
+Press the `Add Folder` button. Afterwards, press the `Create New Folder` button. Enter `test` as folder name.
 
-            </p>
+The result is depicted in the following screenshot.
 
-            <div class="mediaobject"><img src="Unit%20Testing%20with%20JUnit%20-%20Tutorial_files/xjunit10.png"
-                                          alt="Create new source folder for the tests"></div>
-            <p>
+![Creating a new folder](xjunit20.png)
 
-            </p>
+> ### Tip
+> You can also add a new source folder by right-clicking on a project and selecting *New* &#8594; *Source Folder*.
 
-            <p>
-                Press the
-                <span class="guibutton">Add Folder</span>
-                button. Afterwards, press the
-                <span class="guibutton">Create New Folder</span>
-                button. Enter
-                <code class="filename">test`
-                as
-                folder name.
+### 10.2. Create a Java class
 
-            </p>
+In the `src` folder, create the `com.vogella.junit.first` package and the following class.
 
-            <p>The result is depicted in the following screenshot.</p>
+```java
+package com.vogella.junit.first;
 
-            <p>
-
-            </p>
-
-            <div class="mediaobject"><img src="Unit%20Testing%20with%20JUnit%20-%20Tutorial_files/xjunit20.png"
-                                          alt="Creating a new folder"></div>
-            <p>
-
-            </p>
-
-            <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
-                ### Tip</h3>
-
-                <p>
-                    You can also add a new source folder
-                    by right-clicking on a
-                    project and selecting
-                    <span class="guimenu">New </span> &#8594; <span class="guisubmenu">Source Folder</span>.
-
-                </p>
-            </div>
-        </div>
-        
-            
-                <div>
-                    <div>
-                        ### <a name="juniteclipse_class"></a>10.2. Create a Java class
-                        </h3>
-                    </div>
-                </div>
-            </div>
-            <p>
-                In the
-                <code class="filename">src`
-                folder, create the
-                `com.vogella.junit.first`
-                package
-                and the following
-                class.
-
-            </p>
-
-            <p>
-
-            </p><pre class="programlisting">package</span> com.vogella.junit.first;
-
-public</span> class</span> MyClass {
-  public</span> int</span> multiply(<span
-                    class="hl-keyword">int</span> x, int</span> y) {
-    // the following is just an example</em>
-    if</span> (x &gt; 999</span>) {
-      throw</span> new</span> IllegalArgumentException(<span
-                    class="hl-string" style="color:blue">"X should be less than 1000"</span>);
+public class MyClass {
+    public int multiply(int x, int</span> y) {
+        // the following is just an example</em>
+        if (x > 999) {
+            throw new IllegalArgumentException("X should be less than 1000");
+        }
+        return x / y;
     }
-    return</span> x / y;
-  }
-} </pre>
-            <p>
+}
+```
 
-            </p>
-        </div>
-        
 ### 10.3. Create a JUnit test
 
 Right-click on your new class in the *Package Explorer* view and select *New* &#8594; *JUnit Test Case*.
