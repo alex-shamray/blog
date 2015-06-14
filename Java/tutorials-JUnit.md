@@ -307,7 +307,7 @@ The Eclipse IDE ships with a version of JUnit. If you use Eclipse, no additional
 
 ### 7.3. Downloading the JUnit library
 
-If you want to control the used JUnit library explicitly, download JUnit4.x.jar from the following JUnit website. The download contains the `junit-4.*.jar` which is the JUnit library. Add this library to your Java project and add it to the classpath.
+If you want to control the used JUnit library explicitly, download JUnit4.x.jar from the following JUnit website. The download contains the _junit-4.*.jar_ which is the JUnit library. Add this library to your Java project and add it to the classpath.
 
 ```
 http://junit.org/
@@ -328,21 +328,21 @@ Alternatively you can also use the JUnit wizards available under *File* &#8594; 
 
 The Eclipse IDE also provides support for executing your tests interactively.
 
-To run a test, select the class which contains the tests, right-click on it and select <span class="guimenu">Run-as &#8594; <span class="guisubmenu">JUnit Test. This starts JUnit and executes all test methods in this class.
+To run a test, select the class which contains the tests, right-click on it and select *Run-as* &#8594; *JUnit Test*. This starts JUnit and executes all test methods in this class.
 
 Eclipse provides the **Alt**+**Shift**+**X,** **,T** shortcut to run the test in the selected class. If you position the cursor in the Java editor on one test method name, this shortcut runs only the selected test method.
 
 To see the result of an JUnit test, Eclipse uses the *JUnit* view which shows the results of the tests. You can also select individual unit tests in this view, right-click on them and select *Run* to execute them again.
 
-![JUnit view](xjunitview10.png)
+![JUnit view](images/xjunitview10.png)
 
 By default this view shows all tests. You can also configure, that it only shows failing tests.
 
-![JUnit view](xjunit_showonerroronly.png)
+![JUnit view](images/xjunit_showonerroronly.png)
 
 You can also define that the view is only activated if you have a failing test.
 
-![JUnit view](xjunit_showonerroronly2.png)
+![JUnit view](images/xjunit_showonerroronly2.png)
 
 > **Note:** Eclipse creates run configurations for tests. You can see and modify these via the *Run* &#8594; *Run Configurations...* menu.
 
@@ -370,7 +370,7 @@ assertEquals("10 x 5 must be 50", 50, tester.multiply(10, 5));
 
 To create a test suite in Eclipse, you select the test classes which should be included into this in the *Package Explorer* view, right-click on them and select *New* &#8594; *Other...* &#8594; *JUnit* &#8594; *JUnit Test Suite*.
 
-![Create a test suite](xjunittestsuite10.png)
+![Create a test suite](images/xjunittestsuite10.png)
 
 ### 8.5. Testing exception
 
@@ -405,9 +405,9 @@ Use the *New Type* button to add the following entries to it:
 
 This makes, for example, the `assertTrue`, `assertFalse` and `assertEquals` methods directly available in the *Content Assists*.
 
-![Adding static imports to the preferences](xstaticimport10.png)
+![Adding static imports to the preferences](images/xstaticimport10.png)
 
-You can now use *Content Assists* (shortcut: *Ctrl*+*Space*) to add the method and the import.
+You can now use *Content Assists* (shortcut: **Ctrl**+**Space**) to add the method and the import.
 
 
 ## 10. Exercise: Using JUnit
@@ -416,28 +416,28 @@ You can now use *Content Assists* (shortcut: *Ctrl*+*Space*) to add the method a
 
 Create a new project called *com.vogella.junit.first*.
 
-Create a new source folder `test`. For this right-click on your project, select *Properties* and choose *Java* &#8594; *Build Path*. Select the *Source* tab.
+Create a new source folder *test*. For this right-click on your project, select *Properties* and choose *Java* &#8594; *Build Path*. Select the *Source* tab.
 
-![Create new source folder for the tests](xjunit10.png)
+![Create new source folder for the tests](images/xjunit10.png)
 
-Press the `Add Folder` button. Afterwards, press the `Create New Folder` button. Enter `test` as folder name.
+Press the *Add Folder* button. Afterwards, press the *Create New Folder* button. Enter *test* as folder name.
 
 The result is depicted in the following screenshot.
 
-![Creating a new folder](xjunit20.png)
+![Creating a new folder](images/xjunit20.png)
 
 > **Tip:** You can also add a new source folder by right-clicking on a project and selecting *New* &#8594; *Source Folder*.
 
 ### 10.2. Create a Java class
 
-In the `src` folder, create the `com.vogella.junit.first` package and the following class.
+In the *src* folder, create the `com.vogella.junit.first` package and the following class.
 
 ```java
 package com.vogella.junit.first;
 
 public class MyClass {
     public int multiply(int x, int y) {
-        // the following is just an example</em>
+        // the following is just an example
         if (x > 999) {
             throw new IllegalArgumentException("X should be less than 1000");
         }
@@ -450,17 +450,17 @@ public class MyClass {
 
 Right-click on your new class in the *Package Explorer* view and select *New* &#8594; *JUnit Test Case*.
 
-In the following wizard ensure that the *New JUnit 4 test* flag is selected and set the source folder to `test`, so that your test class gets created in this folder.
+In the following wizard ensure that the *New JUnit 4 test* flag is selected and set the source folder to *test*, so that your test class gets created in this folder.
 
-![Create new test class](xjunit30.png)
+![Create new test class](images/xjunit30.png)
 
 Press the *Next* button and select the methods that you want to test.
 
-![Selecting the methods to test](xjunit40.png)
+![Selecting the methods to test](images/xjunit40.png)
 
 If the JUnit library is not part of the classpath of your project, Eclipse will prompt you to add it. Use this to add JUnit to your project.
 
-![Eclipse prompt for adding JUnit to the project classpath](xjunit50.png)
+![Eclipse prompt for adding JUnit to the project classpath](images/xjunit50.png)
 
 Create a test with the following code.
 
@@ -493,11 +493,11 @@ public class MyClassTest {
 
 Right-click on your new test class and select *Run-As* &#8594; *JUnit Test*.
 
-![Run JUnit test in Eclipse](xjunit60.png)
+![Run JUnit test in Eclipse](images/xjunit60.png)
 
 The result of the tests are displayed in the JUnit view. In our example one test should be successful and one test should show an error. This error is indicated by a red bar.
 
-![Result of running a unit test](xjunit70.png)
+![Result of running a unit test](images/xjunit70.png)
 
 The test is failing, because our multiplier class is currently not working correctly. It does a division instead of multiplication. Fix the bug and re-run the test to get a green bar.
 
