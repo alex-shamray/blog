@@ -291,16 +291,10 @@ JUnit 4.x uses annotations to mark methods as test methods and to configure them
 
 Annotation | Description
 -----------|------------
-@Test
+@Test<br/>
 public void method() | The `@Test` annotation identifies a method as a test method.
----------------------|-------------------------------------------------------------
-                            <td align="left"> @Test (expected = Exception.class)</td>
-                            <td align="left">
-                                Fails if the method does not throw the named
-                                exception.
+@Test (expected = Exception.class) | Fails if the method does not throw the named exception.
 
-                            </td>
-                        </tr>
                         <tr>
                             <td align="left">@Test(timeout=100)</td>
                             <td align="left">
