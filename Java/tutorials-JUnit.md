@@ -10,39 +10,28 @@ This tutorial explains unit testing with JUnit 4.x. It explains the creation of 
 
 **Table of Contents**
 
-1. [Unit tests, integration tests and performance tests](#unitintegrationperformancetests)
+* 1. [Unit tests, integration tests and performance tests](#unitintegrationperformancetests)
     * 1.1. [Unit tests and unit testing](#junit_intro)
     * 1.2. [Integration tests](#junit_organization)
     * 1.3. [Performance tests](#junit_performancetests)
     * 1.4. [Building effective tests](#whytesting)
-2. [Testing terminology](#testingterminology)
-    2.1. [Test fixture](#junit_testfixture)
-    2.2. [Behavior vs. state testing](#behaviorvsstatetesting)
-3. [Test organization](#testorganization)
-    3.1. [Test organization for Java projects](#junit_testorganization)
-    3.2. [What should you test?](#junit_whattotest)
-    3.3. [Introducing tests in legacy code](#junit_legacycode)
-
-            <a href="#unittesting">4. Testing frameworks for Java</a>
-            <a href="#junittesting">5. Using JUnit</a>
-            
-                
-                    <a href="#unittesting_junit">5.1. The JUnit framework</a>
-                    <a href="#unittesting_junit_test">5.2. How to define a test in JUnit?</a>
-                    
-                    <a href="#unittesting_junitexample">5.3. Example JUnit test</a>
-                    
-                    <a href="#junit_namingconventions">5.4. JUnit naming
-                        conventions</a>
-                    <a href="#junit_namingconventions_maven">5.5. JUnit naming conventions for
-                        Maven</a>
-                    <a href="#juniteclipse_testsuite">5.6. JUnit test suites</a>
-                    <a href="#juniteclipse_code">5.7. Run your test from the command line</a>
-                    
-                
-            
-            <a href="#junitannoationsandassertstatements">6. Basic JUnit code
-                constructs</a>
+* 2. [Testing terminology](#testingterminology)
+    * 2.1. [Test fixture](#junit_testfixture)
+    * 2.2. [Behavior vs. state testing](#behaviorvsstatetesting)
+* 3. [Test organization](#testorganization)
+    * 3.1. [Test organization for Java projects](#junit_testorganization)
+    * 3.2. [What should you test?](#junit_whattotest)
+    * 3.3. [Introducing tests in legacy code](#junit_legacycode)
+* 4. [Testing frameworks for Java](#unittesting)
+* 5. [Using JUnit](#junittesting)
+    * 5.1. [The JUnit framework](#unittesting_junit)
+    * 5.2. [How to define a test in JUnit?](#unittesting_junit_test)
+    * 5.3. [Example JUnit test](#unittesting_junitexample)
+    * 5.4. [JUnit naming conventions](#junit_namingconventions)
+    * 5.5. [JUnit naming conventions for Maven](#junit_namingconventions_maven)
+    * 5.6. [JUnit test suites](#juniteclipse_testsuite)
+    * 5.7. [Run your test from the command line](#juniteclipse_code)
+* 6. [Basic JUnit code constructs](#junitannoationsandassertstatements)
             
                 
                     <a href="#usingjunit_annotations">6.1. Available JUnit
