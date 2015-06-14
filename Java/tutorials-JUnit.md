@@ -253,13 +253,13 @@ JUnit 4.x uses annotations to mark methods as test methods and to configure them
 
 Annotation | Description
 -----------|------------
-@Test<br> public void method() | The `@Test` annotation identifies a method as a test method.
-@Test (expected = Exception.class) | Fails if the method does not throw the named exception.
+`@Test<br> public void method()` | The `@Test` annotation identifies a method as a test method.
+`@Test (expected = Exception.class)` | Fails if the method does not throw the named exception.
 `@Test(timeout=100)` | Fails if the method takes longer than 100 milliseconds.
-@Before<br> public void method() | This method is executed before each test. It is used to prepare the test environment (e.g., read input data, initialize the class).
-@After<br> public void method() | This method is executed after each test. It is used to cleanup the test environment (e.g., delete temporary data, restore defaults). It can also save memory by cleaning up expensive memory structures.
-@BeforeClass<br> public static void method() | This method is executed once, before the start of all tests. It is used to perform time intensive activities, for example, to connect to a database. Methods marked with this annotation need to be defined as `static` to work with JUnit.
-@AfterClass<br> public static void method() | This method is executed once, after all tests have been finished. It is used to perform clean-up activities, for example, to disconnect from a database. Methods annotated with this annotation need to be defined as `static` to work with JUnit.
+`@Before<br> public void method()` | This method is executed before each test. It is used to prepare the test environment (e.g., read input data, initialize the class).
+`@After<br> public void method()` | This method is executed after each test. It is used to cleanup the test environment (e.g., delete temporary data, restore defaults). It can also save memory by cleaning up expensive memory structures.
+`@BeforeClass<br> public static void method()` | This method is executed once, before the start of all tests. It is used to perform time intensive activities, for example, to connect to a database. Methods marked with this annotation need to be defined as `static` to work with JUnit.
+`@AfterClass<br> public static void method()` | This method is executed once, after all tests have been finished. It is used to perform clean-up activities, for example, to disconnect from a database. Methods annotated with this annotation need to be defined as `static` to work with JUnit.
 `@Ignore` or `@Ignore("Why disabled")` | Ignores the test method. This is useful when the underlying code has been changed and the test case has not yet been adapted. Or if the execution time of this test is too long to be included. It is best practice to provide the optional description, why the test is disabled.
 
 ### 6.2. Assert statements
