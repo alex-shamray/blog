@@ -11,30 +11,18 @@ This tutorial explains unit testing with JUnit 4.x. It explains the creation of 
 **Table of Contents**
 
 1. [Unit tests, integration tests and performance tests](#unitintegrationperformancetests)
-   1.1. [Unit tests and unit testing](#junit_intro)
-   1.2. [Integration tests](#junit_organization)
-   1.3. [Performance tests](#junit_performancetests)
-   1.4. [Building effective tests](#whytesting)
-
+    1.1. [Unit tests and unit testing](#junit_intro)
+    1.2. [Integration tests](#junit_organization)
+    1.3. [Performance tests](#junit_performancetests)
+    1.4. [Building effective tests](#whytesting)
 2. [Testing terminology](#testingterminology)
+    2.1. [Test fixture](#junit_testfixture)
+    2.2. [Behavior vs. state testing](#behaviorvsstatetesting)
+3. [Test organization](#testorganization)
+    3.1. [Test organization for Java projects](#junit_testorganization)
+    3.2. [What should you test?](#junit_whattotest)
+    3.3. [Introducing tests in legacy code](#junit_legacycode)
 
-aasdasdasd
-
-                    <a href="#junit_testfixture">2.1. Test fixture</a>
-                    <a href="#behaviorvsstatetesting">2.2. Behavior vs. state
-                        testing</a>
-                
-            
-            <a href="#testorganization">3. Test organization</a>
-            
-                
-                    <a href="#junit_testorganization">3.1. Test organization for Java
-                        projects</a>
-                    <a href="#junit_whattotest">3.2. What should you test?</a>
-                    <a href="#junit_legacycode">3.3. Introducing tests in legacy
-                        code</a>
-                
-            
             <a href="#unittesting">4. Testing frameworks for Java</a>
             <a href="#junittesting">5. Using JUnit</a>
             
