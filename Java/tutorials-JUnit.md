@@ -790,7 +790,7 @@ There are several frameworks available for mocking. To learn more about mock fra
 
 ### 13.1. Source Code
 
-[Source Code of Examples](http://www.vogella.com/code/index.html)
+[Source Code of Examples](code/)
 
 ### 13.2. JUnit Resources
 
