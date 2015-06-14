@@ -10,12 +10,13 @@ This tutorial explains unit testing with JUnit 4.x. It explains the creation of 
 
 **Table of Contents**
 
-1. s [Unit tests, integration tests and performance tests](#unitintegrationperformancetests)
-    1.1. s [Unit tests and unit testing](#junit_intro)
-    1.2. s [Integration tests](#junit_organization)
-    1.3. s [Performance tests](#junit_performancetests)
-    1.4. s [Building effective tests](#whytesting)
+1. [Unit tests, integration tests and performance tests](#unitintegrationperformancetests)
+    1.1. [Unit tests and unit testing](#junit_intro)
+    1.2. [Integration tests](#junit_organization)
+    1.3. [Performance tests](#junit_performancetests)
+    1.4. [Building effective tests](#whytesting)
 2. [Testing terminology](#testingterminology)
+
                     <a href="#junit_testfixture">2.1. Test fixture</a>
                     <a href="#behaviorvsstatetesting">2.2. Behavior vs. state
                         testing</a>
@@ -89,11 +90,11 @@ This tutorial explains unit testing with JUnit 4.x. It explains the creation of 
             <a href="#juniteclipse_staticimports">9. Setting Eclipse up for using JUnits
                 static imports</a>
 
-<a href="#juniteclipse">10. Exercise: Using JUnit</a>
-                    <a href="#juniteclipse_prep">10.1. Project preparation</a>
-                    <a href="#juniteclipse_class">10.2. Create a Java class</a>
-                    <a href="#juniteclipse_test">10.3. Create a JUnit test</a>
-                    <a href="#juniteclipse_eclipse">10.4. Run your test in Eclipse</a>
+10. [Exercise: Using JUnit](#juniteclipse)
+    10.1. [Project preparation](#juniteclipse_prep)
+    10.2. [Create a Java class](#juniteclipse_class)
+    10.3. [Create a JUnit test](#juniteclipse_test)
+    10.4. [Run your test in Eclipse](#juniteclipse_eclipse)
 11. [Advanced JUnit options](#junitadvanced)
     11.1. [Parameterized test](#junitadvanced_parameterizedtests)
     11.2. [JUnit Rules](#junitadvanced_rules)
