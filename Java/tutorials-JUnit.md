@@ -255,7 +255,7 @@ Annotation | Description
 -----------|------------
 @Test<br> public void method() | The `@Test` annotation identifies a method as a test method.
 @Test (expected = Exception.class) | Fails if the method does not throw the named exception.
-@Test(timeout=100) | Fails if the method takes longer than 100 milliseconds.
+`@Test(timeout=100)` | Fails if the method takes longer than 100 milliseconds.
 @Before<br> public void method() | This method is executed before each test. It is used to prepare the test environment (e.g., read input data, initialize the class).
 @After<br> public void method() | This method is executed after each test. It is used to cleanup the test environment (e.g., delete temporary data, restore defaults). It can also save memory by cleaning up expensive memory structures.
 @BeforeClass<br> public static void method() | This method is executed once, before the start of all tests. It is used to perform time intensive activities, for example, to connect to a database. Methods marked with this annotation need to be defined as `static` to work with JUnit.
