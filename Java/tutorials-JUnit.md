@@ -10,12 +10,12 @@ This tutorial explains unit testing with JUnit 4.x. It explains the creation of 
 
 **Table of Contents**
 
-1. [Unit tests, integration tests and performance tests](#unitintegrationperformancetests)
-    1.1. [Unit tests and unit testing](#junit_intro)
-    1.2. [Integration tests](#junit_organization)
-    1.3. [Performance tests](#junit_performancetests)
-    1.4. [Building effective tests](#whytesting)
-2. [Testing terminology](#testingterminology)
+1. Unit tests, integration tests and performance tests(#unitintegrationperformancetests)
+    1.1. Unit tests and unit testing(#junit_intro)
+    1.2. Integration tests(#junit_organization)
+    1.3. Performance tests(#junit_performancetests)
+    1.4. Building effective tests(#whytesting)
+2. Testing terminology(#testingterminology)
 
                     <a href="#junit_testfixture">2.1. Test fixture</a>
                     <a href="#behaviorvsstatetesting">2.2. Behavior vs. state
@@ -294,10 +294,7 @@ Annotation | Description
 @Test<br> public void method() | The `@Test` annotation identifies a method as a test method.
 `@Test (expected = Exception.class)` | Fails if the method does not throw the named exception.
 `@Test(timeout=100)` | Fails if the method takes longer than 100 milliseconds.
-```
-@Before
-public void method()
-``` | This method is executed before each test. It is used to prepare the test environment (e.g., read input data, initialize the class).
+@Before<br> public void method() | This method is executed before each test. It is used to prepare the test environment (e.g., read input data, initialize the class).
 @After<br> public void method() | This method is executed after each test. It is used to cleanup the test environment (e.g., delete temporary data, restore defaults). It can also save memory by cleaning up expensive memory structures.
 
                             </td>
