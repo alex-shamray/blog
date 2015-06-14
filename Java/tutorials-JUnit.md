@@ -1,9 +1,5 @@
 ## Unit Testing with JUnit - Tutorial
 
-Version 2.8
-
-08.06.2015
-
 **JUnit**
 
 This tutorial explains unit testing with JUnit 4.x. It explains the creation of JUnit tests. It also covers the usage of the Eclipse IDE to work with JUnit tests.
@@ -798,9 +794,8 @@ There are several frameworks available for mocking. To learn more about mock fra
 
 ### 13.2. JUnit Resources
 
-[Eclipse IDE book from Lars Vogel](http://www.amazon.com/dp/3943747042)
-
-[JUnit Homepage](http://www.junit.org/)
+* [Eclipse IDE book from Lars Vogel](http://www.amazon.com/dp/3943747042)
+* [JUnit Homepage](http://www.junit.org/)
 
 
 #### Source
