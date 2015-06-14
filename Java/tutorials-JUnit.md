@@ -93,6 +93,7 @@ Running unit tests after every build or code change help to identify software re
 
 Integration tests check that the whole system works as intended, also reducing the need for intensive manual tests and performance tests allow to ensure that the whole application also works under high load.
 
+
 ## 2. Testing terminology
 
 ### 2.1. Test fixture
@@ -106,6 +107,7 @@ A test is a behavior test (also called interaction test) if it does not validate
 State testing is about validating the result, while behavior testing is about testing the behavior of the application under test.
 
 If you are testing algorithms or system functionality, you want to test in most cases state and not interactions. A typical test setup uses mocks or stubs of related classes to abstract the interactions with these other classes away and tests state in the object which is tested.
+
 
 ## 3. Test organization
 
@@ -125,11 +127,13 @@ You should write software tests in any case for the critical and complex parts o
 
 If you start developing tests for an existing code base without any tests, it is good practice to start writing tests for the parts of the application in which most errors happened in the past. This way you can focus on the critical parts of your application.
 
+
 ## 4. Testing frameworks for Java
 
 Where are several testing frameworks available for Java. The most popular ones are [JUnit](http://junit.org/) and [TestNG](http://testng.org/).
 
 This description focuses at JUnit.
+
 
 ## 5. Using JUnit
 
@@ -238,6 +242,7 @@ public class MyTestRunner {
 
 This class can be executed like any other Java program on the command line. You only need to add the JUnit library JAR file to the classpath.
 
+
 ## 6. Basic JUnit code constructs
 
 ### 6.1. Available JUnit annotations
@@ -257,7 +262,6 @@ Annotation | Description
 @AfterClass<br> public static void method() | This method is executed once, after all tests have been finished. It is used to perform clean-up activities, for example, to disconnect from a database. Methods annotated with this annotation need to be defined as `static` to work with JUnit.
 @Ignore or @Ignore("Why disabled") | Ignores the test method. This is useful when the underlying code has been changed and the test case has not yet been adapted. Or if the execution time of this test is too long to be included. It is best practice to provide the optional description, why the test is disabled.
 
-
 ### 6.2. Assert statements
 
 JUnit provides static methods in the `Assert` class to test for certain conditions. These *assert statements* typically start with `assert` and allow you to specify the error message, the expected and the actual result. An *assertion method* compares the actual value returned by a test to the expected value, and throws an `AssertionException` if the comparison test fails.
@@ -268,15 +272,15 @@ The following table gives an overview of these methods. Parameters in [] bracket
 
 Statement | Description
 ----------|------------
-fail(message) | Let the method fail. Might be used to check that a certain part of the code is not reached or to have a failing test before the test code is implemented. The message parameter is optional.
-assertTrue([message,] boolean condition) | Checks that the boolean condition is true.
-assertFalse([message,] boolean condition) | Checks that the boolean condition is false.
-assertEquals([message,] expected, actual) | Tests that two values are the same. Note: for arrays the reference is checked not the content of the arrays.
-assertEquals([message,] expected, actual, tolerance) | Test that float or double values match. The tolerance is the number of decimals which must be the same.
-assertNull([message,] object) | Checks that the object is null.
-assertNotNull([message,] object) | Checks that the object is not null.
-assertSame([message,] expected, actual) | Checks that both variables refer to the same object.
-assertNotSame([message,] expected, actual) | Checks that both variables refer to different objects.
+```fail(message)``` | Let the method fail. Might be used to check that a certain part of the code is not reached or to have a failing test before the test code is implemented. The message parameter is optional.
+```assertTrue([message,] boolean condition)``` | Checks that the boolean condition is true.
+```assertFalse([message,] boolean condition)``` | Checks that the boolean condition is false.
+```assertEquals([message,] expected, actual)``` | Tests that two values are the same. Note: for arrays the reference is checked not the content of the arrays.
+```assertEquals([message,] expected, actual, tolerance)``` | Test that float or double values match. The tolerance is the number of decimals which must be the same.
+```assertNull([message,] object)``` | Checks that the object is null.
+```assertNotNull([message,] object)``` | Checks that the object is not null.
+```assertSame([message,] expected, actual)``` | Checks that both variables refer to the same object.
+```assertNotSame([message,] expected, actual)``` | Checks that both variables refer to different objects.
 
 ### 6.3. Test execution order
 
@@ -285,6 +289,7 @@ JUnit assumes that all test methods can be executed in an arbitrary order. Well-
 As of JUnit 4.11 the defaulwhich may vary from run to run.t is to use a deterministic, but not predictable, order for the execution of the tests
 
 You can use an annotation to define that the test methods are sorted by method name, in lexicographic order. To activate this feature, annotate your test class with the `@FixMethodOrder(MethodSorters.NAME_ASCENDING)` annotation. You can also explicitely set the default by using the `MethodSorters.DEFAULT` parameter in this annotation. You can also use `MethodSorters.JVM` which uses the JVM defaults, which may vary from run to run.
+
 
 ## 7. Installation of JUnit
 
@@ -311,6 +316,7 @@ If you want to control the used JUnit library explicitly, download JUnit4.x.jar 
 ```
 http://junit.org/
 ```
+
 
 ## 8. Eclipse support for JUnit
 
@@ -388,6 +394,7 @@ try {
 
 JUnit Plug-in tests are used to write unit tests for your plug-ins. These tests are executed by a special test runner that launches another Eclipse instance in a separate VM—just and executes the test methods within that instance.
 
+
 ## 9. Setting Eclipse up for using JUnits static imports
 
 The Eclipse IDE cannot always create the corresponding `static import` statements automatically.
@@ -405,6 +412,7 @@ This makes, for example, the `assertTrue`, `assertFalse` and `assertEquals` meth
 ![Adding static imports to the preferences](xstaticimport10.png)
 
 You can now use *Content Assists* (shortcut: *Ctrl*+*Space*) to add the method and the import.
+
 
 ## 10. Exercise: Using JUnit
 
@@ -496,6 +504,7 @@ The result of the tests are displayed in the JUnit view. In our example one test
 ![Result of running a unit test](xjunit70.png)
 
 The test is failing, because our multiplier class is currently not working correctly. It does a division instead of multiplication. Fix the bug and re-run the test to get a green bar.
+
 
 ## 11. Advanced JUnit options
 
@@ -773,11 +782,13 @@ public class SlowTestSuite {
 }
 ```
 
+
 ## 12. Mocking
 
 Unit testing also makes use of object mocking. In this case the real object is exchanged by a replacement which has a predefined behavior for the test.
 
 There are several frameworks available for mocking. To learn more about mock frameworks please see the [Mockito tutorial](http://www.vogella.com/tutorials/Mockito/article.html) and the [EasyMock tutorial](http://www.vogella.com/tutorials/EasyMock/article.html)
+
 
 ## 13. Links and Literature
 
