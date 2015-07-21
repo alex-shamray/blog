@@ -12,7 +12,7 @@ We could have helpers that calculate time remaining and use a [Spacebars](https:
 
 Meteor's [`Collection` constructor](http://docs.meteor.com/#meteor_collection) can take an option called `transform`. You can specify a function that modifies the objects which are returned:
 
-> <strong>transform</strong> Function
+> **transform** Function
 >
 > An optional transformation function. Documents will be passed through this function before being returned from fetch or findOne, and before being passed to callbacks of observe, map, forEach, allow, and deny. Transforms are not applied for the callbacks of observeChanges or to cursors returned from publish functions.
 
@@ -45,8 +45,8 @@ So rather than defining a new function on every object, let's give our Pomodoro 
 
 ```javascript
 1   // create an object with the desired methods to use as prototype
-2   var pomodoro  = {
-3       endDate : function () {
+2   var pomodoro = {
+3       endDate: function () {
 4           // SugarJS gives us minutesAfter() which gives us a nice syntax for
 5           // creating new Date objects
 6           // http://sugarjs.com/api/Number/unitAfter
