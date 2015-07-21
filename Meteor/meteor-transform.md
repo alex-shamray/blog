@@ -79,3 +79,7 @@ So we return a new object with our custom prototype that has the data fields fro
 ![](images/transform-with-prototype-screenshot.png)
 
 Whichever technique we use, the result is that all objects returned by queries on our Collections end up with our custom methods added to them to provide computed properties.
+
+#### Source
+
+"Adding computed properties to Meteor data", Paul Dowman (May 19, 2014) [http://www.okgrow.com/posts/2014/05/19/meteor-transform/](http://www.okgrow.com/posts/2014/05/19/meteor-transform/)
