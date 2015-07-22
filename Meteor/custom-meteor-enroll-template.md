@@ -2,7 +2,7 @@
 
 In my application I want to seed the database with users and send them an enrollment link to activate their account (and choose a password). I also want them to verify/change some profile data.
 
-In my application I'm doing like this
+I'm doing like this
 
 ```javascript
 this.route('enroll', {
