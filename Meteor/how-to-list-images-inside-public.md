@@ -4,7 +4,7 @@ I want to list the available icons found in /public/icons/
 
 It makes sense to use `Meteor.publish()` to return something static like a list of files in a folder. If I use `publish` I could easily use this data in several routes. With a method that lists the files in a folder, the client must call the server each time I want to show the list, which is not very efficient, and it would delay displaying the results. The list of files does not change every day. I would say that the application must feel faster if I provide the data as part of a route instead of calling a method each time.
 
-So, it's possible to publish a list of files found in /public:
+So, it's possible to publish a list of files found in `/public`:
 
 ```javascript
 Meteor.publish('icons', function() {
