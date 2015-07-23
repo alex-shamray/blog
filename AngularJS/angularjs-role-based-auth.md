@@ -211,3 +211,7 @@ angular.module('yourApp').run(function ($rootScope, $location, AuthenticationSer
 #### Update
 
 I have had quite a few requests for a working code sample for this post. I spent some time putting one together and you can find it [here](https://github.com/artgon/angularjs-role-based-auth). Note that the working code is slightly different than the code above, but the main idea is the same.
+
+#### Source
+
+"AngularJS -- Quick Role-Based Authentication", Arthur Gonigberg (29.06.2013) [http://arthur.gonigberg.com/2013/06/29/angularjs-role-based-auth/](http://arthur.gonigberg.com/2013/06/29/angularjs-role-based-auth/)
