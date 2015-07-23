@@ -1,12 +1,12 @@
 ### AngularJS -- Quick Role-Based Authentication
 
-We've recently started on a new product at [work](http://www.learndot.com/) using the [AngularJS framework](http://www.angularjs.org/). One of the most useful resources when starting out was the *#angularjs* room on [freenode](http://freenode.net/). There seems to be a really large, vibrant community around AngularJS and that's always helpful when starting from scratch on a new framework. One of the best resources in the room was [David Mosher](https://twitter.com/dmosher), who helped us get set up with [Lineman](http://linemanjs.com/) -- an awesome build framework based on [Grunt](http://gruntjs.com/) -- and pointed us to some of his [video tutorials](http://www.youtube.com/user/vidjadavemo). Honestly, these were a great resource for getting started and I highly recommend watching them. The following tutorial is heavily inspired by the examples David provided.
+We've recently started on a new product at [work](http://www.learndot.com) using the [AngularJS framework](http://www.angularjs.org). One of the most useful resources when starting out was the *#angularjs* room on [freenode](http://freenode.net/). There seems to be a really large, vibrant community around AngularJS and that's always helpful when starting from scratch on a new framework. One of the best resources in the room was [David Mosher](https://twitter.com/dmosher), who helped us get set up with [Lineman](http://linemanjs.com) -- an awesome build framework based on [Grunt](http://gruntjs.com/) -- and pointed us to some of his [video tutorials](http://www.youtube.com/user/vidjadavemo). Honestly, these were a great resource for getting started and I highly recommend watching them. The following tutorial is heavily inspired by the examples David provided.
 
 #### Basic Routing
 
 Before starting with authentication you'll need to have some routes. Let's start with a logged out state, and a logged in state:
 
-```javascript                    
+```javascript
 angular.module("yourApp").config(function ($routeProvider) {
 
     $routeProvider.when('/login', {
@@ -40,7 +40,7 @@ angular.module('yourApp').run(function ($rootScope, $location, AuthenticationSer
     // enumerate routes that don't need authentication
     var routesThatDontRequireAuth = ['/login'];
 
-    // check if current location matches route  
+    // check if current location matches route
     var routeClean = function (route) {
         return _.find(routesThatDontRequireAuth,
             function (noAuthRoute) {
@@ -133,7 +133,7 @@ angular.module('yourApp').run(function ($rootScope, $location, AuthenticationSer
     // enumerate routes that don't need authentication
     var routesThatDontRequireAuth = ['/login'];
 
-    // check if current location matches route  
+    // check if current location matches route
     var routeClean = function (route) {
         return _.find(routesThatDontRequireAuth,
             function (noAuthRoute) {
